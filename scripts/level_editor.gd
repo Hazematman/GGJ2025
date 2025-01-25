@@ -61,13 +61,14 @@ func prueba_nivel() -> void:
 	var buton = null
 	var piston = null
 	for elem in range(columns * rows):
-		var x = elem % rows
-		var y = elem / rows
+		var x = elem % columns
+		var y = elem / columns
 		var opcíon: OptionButton = grid.get_child(elem)
 		var node_nombre = opcíones[opcíon.selected]
 		var node_nuevo: PackedScene = opcíones_node[node_nombre]
 		if node_nuevo != null:
 			var node: Node3D = node_nuevo.instantiate()
+			print("pone ", node_nombre, " ", x, " ", y)
 			node.position = Vector3(x*tile_size, 0, y*tile_size)
 			nuevo_nivel.add_child(node)
 			if node_nombre == "Portal":
