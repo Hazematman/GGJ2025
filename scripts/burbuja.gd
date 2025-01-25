@@ -4,6 +4,9 @@ const SPEED = 1.0
 
 var attractor: Node3D = null
 
+signal mata
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -31,3 +34,9 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	if area.get_parent() == attractor:
 		attractor = null
+
+
+func _on_mata() -> void:
+	print("Estoy muerto")
+	get_parent().remove_child(self)
+	queue_free()

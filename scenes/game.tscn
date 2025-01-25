@@ -52,3 +52,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838535, 0.25, -0.813849)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.656745, 0.25, -0.00675201)
 
 [connection signal="mata" from="." to="." method="_on_mata"]
+[connection signal="mata" from="Jugador" to="Jugador" method="_on_mata"]
+[connection signal="mata" from="Burbuja" to="Burbuja" method="_on_mata"]
