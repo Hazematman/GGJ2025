@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctwvoqc0nmoeg"]
+
+[ext_resource type="Script" path="res://scripts/level_editor.gd" id="1_mo6pq"]
+
+[node name="LevelEditor" type="Node3D"]
+
+[node name="LevelEditorGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mo6pq")
+
+[node name="Container" type="HBoxContainer" parent="LevelEditorGUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = -40.0
+offset_right = 193.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="LevelEditorGUI/Container"]
+layout_mode = 2
+text = "Tamaño X:"
+
+[node name="LineEdit_X_dim" type="LineEdit" parent="LevelEditorGUI/Container"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="LevelEditorGUI/Container"]
+layout_mode = 2
+text = "Tamaño Y:"
+
+[node name="LineEdit_Y_dim" type="LineEdit" parent="LevelEditorGUI/Container"]
+layout_mode = 2
+
+[node name="CambiaTamaño" type="Button" parent="LevelEditorGUI/Container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Cambia Tamaño"
+
+[node name="Prueba" type="Button" parent="LevelEditorGUI/Container"]
+layout_mode = 2
+text = "Prueba"
+
+[node name="Guardar" type="Button" parent="LevelEditorGUI/Container"]
+layout_mode = 2
+text = "Guardar"
+
+[node name="Cargar" type="Button" parent="LevelEditorGUI/Container"]
+layout_mode = 2
+text = "Cargar"
+
+[node name="GridContainer" type="GridContainer" parent="LevelEditorGUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FileDialogSave" type="FileDialog" parent="LevelEditorGUI"]
+mode = 3
+initial_position = 2
+size = Vector2i(539, 500)
+ok_button_text = "Guardar"
+access = 2
+filters = PackedStringArray("*.json")
+
+[node name="FileDialogLoad" type="FileDialog" parent="LevelEditorGUI"]
+auto_translate_mode = 1
+mode = 3
+title = "Open a File"
+initial_position = 2
+size = Vector2i(539, 500)
+ok_button_text = "Cargar"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.json")
+
+[connection signal="pressed" from="LevelEditorGUI/Container/CambiaTamaño" to="LevelEditorGUI" method="_on_cambia_tamaño"]
+[connection signal="pressed" from="LevelEditorGUI/Container/Prueba" to="LevelEditorGUI" method="_on_prueba_pressed"]
+[connection signal="pressed" from="LevelEditorGUI/Container/Guardar" to="LevelEditorGUI" method="_on_guardar_pressed"]
+[connection signal="pressed" from="LevelEditorGUI/Container/Cargar" to="LevelEditorGUI" method="_on_cargar_pressed"]
+[connection signal="confirmed" from="LevelEditorGUI/FileDialogSave" to="LevelEditorGUI" method="_on_file_dialog_save_confirmed"]
+[connection signal="file_selected" from="LevelEditorGUI/FileDialogLoad" to="LevelEditorGUI" method="_on_file_dialog_load_file_selected"]
