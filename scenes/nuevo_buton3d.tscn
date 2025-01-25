@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://7hx8dsgjiyrl"]
+
+[ext_resource type="Script" path="res://scripts/nuevo_buton_3d.gd" id="1_k58wr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ujipw"]
+size = Vector3(0.15, 0.05, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q1318"]
+size = Vector3(0.15, 0.3, 0.15)
+
+[node name="NuevoButon3d" type="Area3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_k58wr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
+mesh = SubResource("BoxMesh_ujipw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150455, 0)
+shape = SubResource("BoxShape3D_q1318")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
