@@ -1,6 +1,6 @@
 extends Control
 
-@onready var grid = $GridContainer
+@onready var grid = $ScrollContainer/GridContainer
 
 var opcíones = [
 	"Aire",
@@ -11,7 +11,7 @@ var opcíones = [
 var opcíones_node = {
 	"Aire": null,
 	"Tierra": preload("res://scenes/tierra.tscn"),
-	"Pincho": preload("res://scenes/pincho.tscn"),
+	"Pincho": preload("res://scenes/pincho_con_tierra.tscn"),
 }
 
 var mapa_basica: PackedScene = preload("res://scenes/mapa_basica.tscn")
@@ -21,10 +21,12 @@ var rows: int  = 0
 
 var nivel = null
 
+const tile_size: float = 0.3
+
 func crear_lista_de_objectos() -> Control:
 	var opcíon_buton = OptionButton.new()
 	for opcíon in opcíones:
-		opcíon_buton.add_item(opcíon[0])
+		opcíon_buton.add_item(opcíon)
 	return opcíon_buton
 
 func _on_cambia_tamaño() -> void:
@@ -32,8 +34,8 @@ func _on_cambia_tamaño() -> void:
 	rows = int($Container/LineEdit_Y_dim.text)
 	print("Size ", columns, " ", rows)
 	
-	for child in $GridContainer.get_children():
-		$GridContainer.remove_child(child)
+	for child in grid.get_children():
+		grid.remove_child(child)
 	
 	grid.columns = columns
 	
@@ -43,6 +45,7 @@ func _on_cambia_tamaño() -> void:
 
 func prueba_nivel() -> void:
 	var nuevo_nivel = mapa_basica.instantiate()
+	nuevo_nivel.editor = self
 	
 	for elem in range(columns * rows):
 		var x = elem % rows
@@ -52,7 +55,7 @@ func prueba_nivel() -> void:
 		var node_nuevo: PackedScene = opcíones_node[node_nombre]
 		if node_nuevo != null:
 			var node: Node3D = node_nuevo.instantiate()
-			node.position = Vector3(x, 0, y)
+			node.position = Vector3(x*tile_size, 0, y*tile_size)
 			nuevo_nivel.add_child(node)
 	
 	get_parent().add_child(nuevo_nivel)
@@ -89,7 +92,7 @@ func load_level(path: String) -> void:
 	_on_cambia_tamaño()
 	
 	var index = 0
-	for child in $GridContainer.get_children():
+	for child in grid.get_children():
 		child.selected = opcíones.find(nuevo_nivel["nodes"][index])
 		index += 1
 

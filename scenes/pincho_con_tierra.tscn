@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b11obr022cw7m"]
+
+[ext_resource type="PackedScene" uid="uid://b4qb4d5sxi1tg" path="res://scenes/tierra.tscn" id="1_j20ew"]
+[ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://scenes/pincho.tscn" id="2_lcex5"]
+
+[node name="PinchoConTierra" type="Node3D"]
+
+[node name="Tierra" parent="." instance=ExtResource("1_j20ew")]
+
+[node name="Pincho" parent="." instance=ExtResource("2_lcex5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157593, 0)

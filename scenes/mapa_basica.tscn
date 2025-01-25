@@ -1,20 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://cauawvsjcua7o"]
+[gd_scene load_steps=4 format=3 uid="uid://cauawvsjcua7o"]
 
 [ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_85i4a"]
 [ext_resource type="Script" path="res://scripts/mapa_basica.gd" id="1_hc840"]
+[ext_resource type="Script" path="res://scripts/camara.gd" id="2_vpjra"]
 
 [node name="MapaBasica" type="Node3D"]
 script = ExtResource("1_hc840")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("node")]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 1, 1.5, 1)
 projection = 1
 current = true
 size = 2.5
+script = ExtResource("2_vpjra")
+node = NodePath("../Jugador")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.838671, -0.385118, 0.385118, 0, 0.707107, 0.707107, -0.544639, -0.59303, 0.59303, 0, 2.26353, 2.8444)
 
 [node name="Jugador" parent="." instance=ExtResource("1_85i4a")]
 
+[connection signal="mata" from="." to="." method="_on_mata"]
 [connection signal="mata" from="Jugador" to="Jugador" method="_on_mata"]
