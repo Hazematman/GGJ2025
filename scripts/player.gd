@@ -9,16 +9,25 @@ var UP_DIR = (Vector3.RIGHT + Vector3.BACK).normalized()
 signal mata
 
 var attracting = false
+var expulsing = false
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("attract"):
-		$Area3D.monitorable = true
 		attracting = true
-		$Area3D/MeshInstance3D.show()
 	else:
-		$Area3D.monitorable = false
 		attracting = false
+	
+	if Input.is_action_pressed("expulse"):
+		expulsing = true
+	else:
+		expulsing = false
+		
+	if Input.is_action_pressed("expulse") or Input.is_action_pressed("attract"):
+		$Area3D/MeshInstance3D.show()
+		$Area3D.monitorable = true
+	else:
 		$Area3D/MeshInstance3D.hide()
+		$Area3D.monitorable = false
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -50,3 +59,11 @@ func _on_mata() -> void:
 	print("Estoy muerto")
 	get_parent().remove_child(self)
 	queue_free()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	pass # Replace with function body.
