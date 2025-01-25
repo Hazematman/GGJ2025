@@ -18,4 +18,5 @@ func _on_mata() -> void:
 		get_parent().call_deferred("remove_child", self)
 		queue_free()
 	else:
-		add_child(game_over_screen.instantiate())
+		var game_over = game_over_screen.instantiate()
+		add_child(game_over)
