@@ -8,7 +8,18 @@ var UP_DIR = (Vector3.RIGHT + Vector3.BACK).normalized()
 
 signal mata
 
+var attracting = false
+
 func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("attract"):
+		$Area3D.monitorable = true
+		attracting = true
+		$Area3D/MeshInstance3D.show()
+	else:
+		$Area3D.monitorable = false
+		attracting = false
+		$Area3D/MeshInstance3D.hide()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -27,6 +38,8 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = move_toward(velocity.x, direction.x, SPEED)
 		velocity.z = move_toward(velocity.z, direction.z, SPEED)
+		
+		look_at(position - Vector3(velocity.x, 0, velocity.z), Vector3.UP)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

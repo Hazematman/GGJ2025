@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmxkqtmrvjhl"]
+
+[ext_resource type="Script" path="res://scripts/burbuja.gd" id="1_gcaxg"]
+[ext_resource type="Texture2D" uid="uid://v2nv1gjyhcdt" path="res://assets/burbuja.png" id="1_ugfwn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n3vpj"]
+radius = 0.15
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_endjf"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="Burbuja" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_gcaxg")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.005
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_ugfwn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_n3vpj")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_endjf")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
