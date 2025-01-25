@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://lq6ff0qsyerx"]
+[gd_scene load_steps=8 format=3 uid="uid://d2v20lptmp74h"]
 
 [ext_resource type="Script" path="res://scripts/Empezar.gd" id="1_kd37s"]
 [ext_resource type="Texture2D" uid="uid://dp0i1yiswbofk" path="res://assets/piston.png" id="2_mme5y"]
+[ext_resource type="PackedScene" uid="uid://bjq448laokne" path="res://assets/cohete.blend" id="3_n60fm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ovf6a"]
 size = Vector3(0.15, 0.5, 0.15)
@@ -16,6 +17,9 @@ lightmap_size_hint = Vector2i(5, 8)
 material = SubResource("StandardMaterial3D_a3w00")
 size = Vector3(0.15, 0.15, 0.15)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6esfm"]
+size = Vector3(0.5, 0.5, 0.5)
+
 [node name="Nave" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 collision_layer = 2
@@ -27,15 +31,19 @@ shape = SubResource("BoxShape3D_ovf6a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175, 0)
+visible = false
 mesh = SubResource("BoxMesh_ixbj2")
+
+[node name="cohete" parent="." instance=ExtResource("3_n60fm")]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, -0.250959, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.153075)
-shape = SubResource("BoxShape3D_ovf6a")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0023504)
+shape = SubResource("BoxShape3D_6esfm")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]
