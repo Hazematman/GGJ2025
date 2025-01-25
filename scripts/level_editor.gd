@@ -8,6 +8,7 @@ var opcíones = [
 	"Pincho",
 	"Burbuja",
 	"Portal",
+	"Bandera",
 ]
 
 var opcíones_node = {
@@ -16,6 +17,7 @@ var opcíones_node = {
 	"Pincho": preload("res://scenes/pincho_con_tierra.tscn"),
 	"Burbuja": preload("res://scenes/burbuja_con_tierra.tscn"),
 	"Portal": preload("res://scenes/portal_con_tierra.tscn"),
+	"Bandera": preload("res://scenes/bander_con_tierra.tscn"),
 }
 
 var mapa_basica: PackedScene = preload("res://scenes/mapa_basica.tscn")

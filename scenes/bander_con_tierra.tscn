@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://balgqjj8n5m2f"]
+
+[ext_resource type="PackedScene" uid="uid://b4qb4d5sxi1tg" path="res://scenes/tierra.tscn" id="1_go3l3"]
+[ext_resource type="PackedScene" uid="uid://dv5rewd88c2te" path="res://scenes/bandera.tscn" id="2_eaur6"]
+
+[node name="BanderConTierra" type="Node3D"]
+
+[node name="Tierra" parent="." instance=ExtResource("1_go3l3")]
+
+[node name="Bandera" parent="." instance=ExtResource("2_eaur6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167145, 0)

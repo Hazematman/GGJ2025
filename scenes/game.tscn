@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnkxde3v6a63m"]
+[gd_scene load_steps=10 format=3 uid="uid://bnkxde3v6a63m"]
 
 [ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_on0ku"]
 [ext_resource type="Script" path="res://scripts/mapa_basica.gd" id="1_y5lt0"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bhm3q7oo8pjet" path="res://scenes/portal.tscn" id="3_37cqa"]
 [ext_resource type="PackedScene" uid="uid://stkqtq403the" path="res://scenes/piston.tscn" id="4_20j5n"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="5_1mhya"]
+[ext_resource type="PackedScene" uid="uid://dv5rewd88c2te" path="res://scenes/bandera.tscn" id="7_vjvvj"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bb8d1"]
 
@@ -51,6 +52,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838535, 0.25, -0.813849)
 [node name="Burbuja" parent="." instance=ExtResource("5_1mhya")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.656745, 0.25, -0.00675201)
 
+[node name="Bandera" parent="." instance=ExtResource("7_vjvvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.356532, 0.25, -0.306759)
+
+[connection signal="gana" from="." to="." method="_on_gana"]
 [connection signal="mata" from="." to="." method="_on_mata"]
 [connection signal="mata" from="Jugador" to="Jugador" method="_on_mata"]
 [connection signal="mata" from="Burbuja" to="Burbuja" method="_on_mata"]
