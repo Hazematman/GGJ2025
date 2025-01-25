@@ -15,7 +15,7 @@ func _on_mata() -> void:
 	print("MATA")
 	if editor != null:
 		get_parent().add_child(editor)
-		get_parent().remove_child(self)
+		get_parent().call_deferred("remove_child", self)
 		queue_free()
 	else:
 		add_child(game_over_screen.instantiate())

@@ -27,7 +27,7 @@ script = ExtResource("1_2vr7p")
 shape = SubResource("BoxShape3D_ovf6a")
 
 [node name="piston2" parent="." instance=ExtResource("2_3fy0u")]
-transform = Transform3D(0.082, 0, 0, 0, -3.58433e-09, -0.082, 0, 0.082, -3.58433e-09, 0, -0.172722, -0.0760746)
+transform = Transform3D(0.082, 0, 0, 0, 0.082, 0, 0, 0, 0.082, 0, -0.248967, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175, 0)
