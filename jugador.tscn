@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhl4dlwx751ji"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_j1xni"]
+
+[sub_resource type="Gradient" id="Gradient_60t3l"]
+offsets = PackedFloat32Array(0.448052, 1)
+colors = PackedColorArray(0.206035, 0.434082, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cq5k4"]
+gradient = SubResource("Gradient_60t3l")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kxb4x"]
+radius = 0.15
+
+[node name="Jugador" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.286479, 0)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_j1xni")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.005
+billboard = 1
+texture = SubResource("GradientTexture2D_cq5k4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_kxb4x")
