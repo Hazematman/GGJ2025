@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4lvv1vix1qn2"]
+[gd_scene load_steps=5 format=3 uid="uid://d4lvv1vix1qn2"]
 
 [ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_nfbys"]
-[ext_resource type="PackedScene" uid="uid://stkqtq403the" path="res://scenes/piston.tscn" id="2_0yfdn"]
-[ext_resource type="Script" path="res://scripts/Empezar.gd" id="3_3qxao"]
+[ext_resource type="PackedScene" uid="uid://lq6ff0qsyerx" path="res://scenes/buton3d.tscn" id="4_l47c4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bjj35"]
 
@@ -30,8 +29,7 @@ transform = Transform3D(0.838671, -0.385118, 0.385118, 0, 0.707107, 0.707107, -0
 
 [node name="Jugador" parent="." instance=ExtResource("1_nfbys")]
 
-[node name="Empezar" parent="." instance=ExtResource("2_0yfdn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838535, 0.25, -0.813849)
-script = ExtResource("3_3qxao")
+[node name="Nave" parent="." instance=ExtResource("4_l47c4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.824988, 0.25, -0.383465)
 
 [connection signal="mata" from="Jugador" to="Jugador" method="_on_mata"]
