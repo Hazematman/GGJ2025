@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1se8dobxmqmx"]
+
+[ext_resource type="Script" path="res://scripts/fondo.gd" id="1_q28yf"]
+[ext_resource type="Texture2D" uid="uid://bfqcu571q710p" path="res://assets/Fondos/fondo1.png" id="2_jhjcg"]
+[ext_resource type="Texture2D" uid="uid://dsl830h8h8o5d" path="res://assets/Fondos/fondo2.png" id="3_xsq4l"]
+[ext_resource type="Texture2D" uid="uid://ct0mb0vrgkef1" path="res://assets/Fondos/fondo3.png" id="4_svrsx"]
+[ext_resource type="Texture2D" uid="uid://d2t2vrhndqd8v" path="res://assets/Fondos/fondo4.png" id="5_jqu4r"]
+[ext_resource type="Texture2D" uid="uid://o6ygh6x6dwep" path="res://assets/Fondos/fondo5.png" id="6_x5eb5"]
+[ext_resource type="Texture2D" uid="uid://dd4lja7urps5g" path="res://assets/Fondos/fondo6.png" id="7_85jvf"]
+[ext_resource type="Texture2D" uid="uid://dk5ofgl0px88k" path="res://assets/Fondos/fondo7.png" id="8_gvxx1"]
+[ext_resource type="Texture2D" uid="uid://b1j1he0sq066v" path="res://assets/Fondos/fondo8.png" id="9_gyc58"]
+[ext_resource type="Texture2D" uid="uid://b16wh6bmicl7m" path="res://assets/Fondos/fondo9.png" id="10_c2mc3"]
+
+[node name="Fondo" type="Node3D"]
+script = ExtResource("1_q28yf")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("2_jhjcg")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+texture = ExtResource("3_xsq4l")
+region_enabled = true
+region_rect = Rect2(0, 0, 1080, 1080)
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+texture = ExtResource("4_svrsx")
+region_enabled = true
+region_rect = Rect2(0, 0, 1080, 1080)
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+texture = ExtResource("5_jqu4r")
+region_enabled = true
+region_rect = Rect2(0, 0, 1080, 1080)
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+texture = ExtResource("6_x5eb5")
+region_enabled = true
+region_rect = Rect2(0, 0, 1080, 1080)
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+visible = false
+texture = ExtResource("7_85jvf")
+region_enabled = true
+region_rect = Rect2(0, 0, 1080, 1080)
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+texture = ExtResource("8_gvxx1")
+region_enabled = true
+region_rect = Rect2(0, 0, 1080, 1080)
+
+[node name="Sprite3D8" type="Sprite3D" parent="."]
+texture = ExtResource("9_gyc58")
+region_enabled = true
+region_rect = Rect2(0, 0, 1080, 1080)
+
+[node name="Sprite3D9" type="Sprite3D" parent="."]
+texture = ExtResource("10_c2mc3")
+region_enabled = true
+region_rect = Rect2(0, 0, 1080, 1080)
