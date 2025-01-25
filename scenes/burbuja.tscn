@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmxkqtmrvjhl"]
+[gd_scene load_steps=8 format=3 uid="uid://dmxkqtmrvjhl"]
 
 [ext_resource type="Script" path="res://scripts/burbuja.gd" id="1_gcaxg"]
-[ext_resource type="Texture2D" uid="uid://v2nv1gjyhcdt" path="res://assets/burbuja.png" id="1_ugfwn"]
+[ext_resource type="Shader" path="res://assets/burbuja.gdshader" id="3_7j5j3"]
+[ext_resource type="Texture2D" uid="uid://wystkyu6xau0" path="res://assets/barril.png" id="4_78kwf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n3vpj"]
 radius = 0.15
@@ -9,17 +10,37 @@ radius = 0.15
 [sub_resource type="BoxShape3D" id="BoxShape3D_endjf"]
 size = Vector3(0.3, 0.3, 0.3)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3o05q"]
+render_priority = 0
+shader = ExtResource("3_7j5j3")
+shader_parameter/_shield_color = Color(0.324866, 0.361364, 0.0484236, 1)
+shader_parameter/_shield_color_brightness = 10.0
+shader_parameter/_shield_intensity = 2.0
+shader_parameter/_rotation = Vector3(0.1, 0, 0)
+shader_parameter/_shield_size = 0.0
+shader_parameter/_shield_pulse_frequency = 1.0
+shader_parameter/_shield_pulse_density = 1.0
+shader_parameter/_shield_pulse_amplitude = 1.0
+shader_parameter/_shield_pulse_blend = 1.0
+shader_parameter/_shield_pulse_radius = 1.0
+shader_parameter/_impact_origin = Vector3(1, 0, 0)
+shader_parameter/_impact_frequency = 5.0
+shader_parameter/_impact_density = 5.0
+shader_parameter/_impact_amplitude = 6.0
+shader_parameter/_impact_blend = 0.0
+shader_parameter/_impact_radius = 1.1
+shader_parameter/_impact_anim = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_kqjv5"]
+material = SubResource("ShaderMaterial_3o05q")
+radius = 0.15
+height = 0.3
+
 [node name="Burbuja" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_gcaxg")
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-pixel_size = 0.005
-billboard = 1
-texture_filter = 0
-texture = ExtResource("1_ugfwn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_n3vpj")
@@ -31,6 +52,14 @@ monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_endjf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_kqjv5")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+billboard = 1
+texture = ExtResource("4_78kwf")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

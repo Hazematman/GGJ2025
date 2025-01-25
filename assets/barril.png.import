@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v2nv1gjyhcdt"
-path.s3tc="res://.godot/imported/burbuja.png-c99bd216e4cec6a8893eed8e404abdbe.s3tc.ctex"
+uid="uid://wystkyu6xau0"
+path.s3tc="res://.godot/imported/barril.png-c921524741820bfdcecb68e913df555e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/burbuja.png"
-dest_files=["res://.godot/imported/burbuja.png-c99bd216e4cec6a8893eed8e404abdbe.s3tc.ctex"]
+source_file="res://assets/barril.png"
+dest_files=["res://.godot/imported/barril.png-c921524741820bfdcecb68e913df555e.s3tc.ctex"]
 
 [params]
 
