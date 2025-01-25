@@ -101,8 +101,7 @@ func _on_guardar_pressed() -> void:
 	save_level()
 
 
-func _on_file_dialog_save_confirmed() -> void:
-	var path = $FileDialogSave.current_path
+func _on_file_dialog_save_confirmed(path: String) -> void:
 	print("Saving ", path)
 	
 	var save_file = FileAccess.open(path, FileAccess.WRITE)

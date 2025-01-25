@@ -86,5 +86,5 @@ filters = PackedStringArray("*.json")
 [connection signal="pressed" from="LevelEditorGUI/Container/Prueba" to="LevelEditorGUI" method="_on_prueba_pressed"]
 [connection signal="pressed" from="LevelEditorGUI/Container/Guardar" to="LevelEditorGUI" method="_on_guardar_pressed"]
 [connection signal="pressed" from="LevelEditorGUI/Container/Cargar" to="LevelEditorGUI" method="_on_cargar_pressed"]
-[connection signal="confirmed" from="LevelEditorGUI/FileDialogSave" to="LevelEditorGUI" method="_on_file_dialog_save_confirmed"]
+[connection signal="file_selected" from="LevelEditorGUI/FileDialogSave" to="LevelEditorGUI" method="_on_file_dialog_save_confirmed"]
 [connection signal="file_selected" from="LevelEditorGUI/FileDialogLoad" to="LevelEditorGUI" method="_on_file_dialog_load_file_selected"]
