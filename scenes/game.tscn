@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnkxde3v6a63m"]
 
-[ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://jugador.tscn" id="1_023fh"]
-[ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://pincho.tscn" id="2_gmflv"]
-[ext_resource type="PackedScene" uid="uid://bhm3q7oo8pjet" path="res://portal.tscn" id="3_3tpu4"]
+[ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_on0ku"]
+[ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://scenes/pincho.tscn" id="2_31lb3"]
+[ext_resource type="PackedScene" uid="uid://bhm3q7oo8pjet" path="res://scenes/portal.tscn" id="3_37cqa"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bb8d1"]
 
@@ -28,16 +28,16 @@ shape = SubResource("ConcavePolygonShape3D_bhmb1")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 2.26353, 2.8444)
 
-[node name="Jugador" parent="." instance=ExtResource("1_023fh")]
+[node name="Jugador" parent="." instance=ExtResource("1_on0ku")]
 
-[node name="Pincho" parent="." instance=ExtResource("2_gmflv")]
+[node name="Pincho" parent="." instance=ExtResource("2_31lb3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.562503, 0.25, 0.498212)
 
-[node name="Portal" parent="." node_paths=PackedStringArray("destino") instance=ExtResource("3_3tpu4")]
+[node name="Portal" parent="." node_paths=PackedStringArray("destino") instance=ExtResource("3_37cqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.620492, 0.25, 0.86491)
 destino = NodePath("../Portal2")
 
-[node name="Portal2" parent="." node_paths=PackedStringArray("destino") instance=ExtResource("3_3tpu4")]
+[node name="Portal2" parent="." node_paths=PackedStringArray("destino") instance=ExtResource("3_37cqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.812912, 0.25, -0.835683)
 destino = NodePath("../Portal")
 

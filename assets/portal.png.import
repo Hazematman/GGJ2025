@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dv6wsbjhxblco"
-path.s3tc="res://.godot/imported/portal.png-cac28fad10330d5df5782c260ec8497f.s3tc.ctex"
+path.s3tc="res://.godot/imported/portal.png-aead05909ff805293aa08d3705b32f3c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://portal.png"
-dest_files=["res://.godot/imported/portal.png-cac28fad10330d5df5782c260ec8497f.s3tc.ctex"]
+source_file="res://assets/portal.png"
+dest_files=["res://.godot/imported/portal.png-aead05909ff805293aa08d3705b32f3c.s3tc.ctex"]
 
 [params]
 
