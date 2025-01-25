@@ -21,7 +21,9 @@ func _physics_process(delta: float) -> void:
 		if (not attractor.attracting) or (velocity.length() > MAX_SPEED):
 			attractor = null
 		else:
-			var nueva_direction = (attractor.global_position - global_position).normalized()
+			var nueva_direction = (attractor.global_position - global_position)
+			nueva_direction.y = 0
+			nueva_direction = nueva_direction.normalized()
 			if (velocity.length() < MAX_SPEED):
 				velocity += SPEED * nueva_direction
 			
@@ -29,7 +31,10 @@ func _physics_process(delta: float) -> void:
 		if (not expulsor.expulsing) or (velocity.length() < -MAX_SPEED):
 			expulsor = null
 		else:
-			var nueva_direction = (expulsor.global_position - global_position).normalized()
+			var nueva_direction = (expulsor.global_position - global_position)
+			nueva_direction.y = 0
+			nueva_direction = nueva_direction.normalized()
+			
 			if (velocity.length() < MAX_SPEED):
 				velocity -= SPEED * nueva_direction
 						

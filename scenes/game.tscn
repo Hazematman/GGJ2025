@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bnkxde3v6a63m"]
+[gd_scene load_steps=14 format=3 uid="uid://bnkxde3v6a63m"]
 
 [ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_on0ku"]
 [ext_resource type="Script" path="res://scripts/mapa_basica.gd" id="1_y5lt0"]
 [ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://scenes/pincho.tscn" id="2_31lb3"]
-[ext_resource type="PackedScene" path="res://scenes/fondo.tscn" id="2_upwy4"]
+[ext_resource type="Script" path="res://scripts/camara.gd" id="2_ddsg0"]
+[ext_resource type="PackedScene" uid="uid://83k88uip7p5j" path="res://scenes/fondo.tscn" id="2_upwy4"]
 [ext_resource type="PackedScene" uid="uid://bhm3q7oo8pjet" path="res://scenes/portal.tscn" id="3_37cqa"]
 [ext_resource type="PackedScene" uid="uid://stkqtq403the" path="res://scenes/piston.tscn" id="4_20j5n"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="5_1mhya"]
@@ -21,11 +22,14 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_y5lt0")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("node", "fondo")]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 1, 1.5, 1)
 projection = 1
 current = true
 size = 2.5
+script = ExtResource("2_ddsg0")
+node = NodePath("../Jugador")
+fondo = NodePath("../Fondo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
