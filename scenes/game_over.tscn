@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpb3yqnixl1sm"]
+
+[ext_resource type="Script" path="res://scripts/boton_reintentar.gd" id="1_itjs1"]
+[ext_resource type="Script" path="res://scripts/boton_salir.gd" id="2_u5h41"]
+
+[node name="game_over" type="CanvasLayer"]
+
+[node name="Reintentar" type="Button" parent="."]
+offset_left = 526.0
+offset_top = 85.0
+offset_right = 664.0
+offset_bottom = 134.0
+text = "Reintentar"
+script = ExtResource("1_itjs1")
+
+[node name="Salir" type="Button" parent="."]
+offset_left = 527.0
+offset_top = 217.0
+offset_right = 665.0
+offset_bottom = 266.0
+text = "Salir del juego"
+script = ExtResource("2_u5h41")
+
+[connection signal="pressed" from="Reintentar" to="Reintentar" method="_button_pressed"]
+[connection signal="pressed" from="Salir" to="Salir" method="_button_pressed"]

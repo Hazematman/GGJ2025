@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4lvv1vix1qn2"]
+
+[ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_nfbys"]
+[ext_resource type="PackedScene" uid="uid://stkqtq403the" path="res://scenes/piston.tscn" id="2_0yfdn"]
+[ext_resource type="Script" path="res://scripts/Empezar.gd" id="3_3qxao"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bjj35"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_f7ohk"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="main menu" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 1, 1.5, 1)
+projection = 1
+current = true
+size = 2.5
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_bjj35")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_f7ohk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.838671, -0.385118, 0.385118, 0, 0.707107, 0.707107, -0.544639, -0.59303, 0.59303, 0, 2.26353, 2.8444)
+
+[node name="Jugador" parent="." instance=ExtResource("1_nfbys")]
+
+[node name="Empezar" parent="." instance=ExtResource("2_0yfdn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838535, 0.25, -0.813849)
+script = ExtResource("3_3qxao")
+
+[connection signal="mata" from="Jugador" to="Jugador" method="_on_mata"]

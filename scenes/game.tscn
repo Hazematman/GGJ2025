@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnkxde3v6a63m"]
+[gd_scene load_steps=8 format=3 uid="uid://bnkxde3v6a63m"]
 
 [ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_on0ku"]
+[ext_resource type="Script" path="res://scripts/mapa_basica.gd" id="1_y5lt0"]
 [ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://scenes/pincho.tscn" id="2_31lb3"]
 [ext_resource type="PackedScene" uid="uid://bhm3q7oo8pjet" path="res://scenes/portal.tscn" id="3_37cqa"]
 [ext_resource type="PackedScene" uid="uid://stkqtq403the" path="res://scenes/piston.tscn" id="4_20j5n"]
@@ -11,6 +12,7 @@
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_y5lt0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 1, 1.5, 1)
@@ -45,4 +47,5 @@ destino = NodePath("../Portal")
 [node name="Piston" parent="." instance=ExtResource("4_20j5n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838535, 0.25, -0.813849)
 
+[connection signal="mata" from="." to="." method="_on_mata"]
 [connection signal="mata" from="Jugador" to="Jugador" method="_on_mata"]
