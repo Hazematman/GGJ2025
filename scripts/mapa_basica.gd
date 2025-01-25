@@ -20,3 +20,14 @@ func _on_mata() -> void:
 	else:
 		var game_over = game_over_screen.instantiate()
 		add_child(game_over)
+
+var menu = false
+var GO = game_over_screen.instantiate()
+func _input(ev):
+	if Input.is_action_just_pressed("Menu"):
+		if menu == false:
+			menu = true
+			add_child(GO)
+		else:
+			menu = false
+			remove_child(GO)
