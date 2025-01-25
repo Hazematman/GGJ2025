@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnkxde3v6a63m"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_jrbtv"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bb8d1"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bhmb1"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="Gradient" id="Gradient_60t3l"]
+offsets = PackedFloat32Array(0.448052, 1)
+colors = PackedColorArray(0.206035, 0.434082, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cq5k4"]
+gradient = SubResource("Gradient_60t3l")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kxb4x"]
+radius = 0.15
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 1, 1.5, 1)
+projection = 1
+current = true
+size = 2.5
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_bb8d1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_bhmb1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 2.26353, 2.8444)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.286479, 0)
+script = ExtResource("1_jrbtv")
+
+[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
+pixel_size = 0.005
+billboard = 1
+texture = SubResource("GradientTexture2D_cq5k4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("SphereShape3D_kxb4x")
