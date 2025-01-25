@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d4lvv1vix1qn2"]
 
 [ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_nfbys"]
-[ext_resource type="PackedScene" uid="uid://lq6ff0qsyerx" path="res://scenes/buton3d.tscn" id="4_l47c4"]
+[ext_resource type="PackedScene" uid="uid://d2v20lptmp74h" path="res://scenes/buton3d.tscn" id="4_l47c4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bjj35"]
 
@@ -32,4 +32,11 @@ transform = Transform3D(0.838671, -0.385118, 0.385118, 0, 0.707107, 0.707107, -0
 [node name="Nave" parent="." instance=ExtResource("4_l47c4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.824988, 0.25, -0.383465)
 
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74, 0.168, 0.827)
+billboard = 1
+text = "Pone `E` para interactuar"
+
 [connection signal="mata" from="Jugador" to="Jugador" method="_on_mata"]
+
+[editable path="Nave"]

@@ -32,10 +32,6 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("saltar") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 		
 	# Un basis (3x3 matrix) para mover correcto en la perspectiva isometrico
 	var iso_basis := Basis(RIGHT_DIR, Vector3.UP, UP_DIR)
