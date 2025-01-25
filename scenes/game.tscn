@@ -53,7 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838535, 0.25, -0.813849)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.656745, 0.25, -0.00675201)
 
 [node name="Bandera" parent="." instance=ExtResource("7_vjvvj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.356532, 0.25, -0.306759)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.626783, 0.25, -0.306759)
 
 [connection signal="gana" from="." to="." method="_on_gana"]
 [connection signal="mata" from="." to="." method="_on_mata"]
