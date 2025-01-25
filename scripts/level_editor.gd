@@ -9,6 +9,8 @@ var opcíones = [
 	"Burbuja",
 	"Portal",
 	"Bandera",
+	"Piston",
+	"Buton"
 ]
 
 var opcíones_node = {
@@ -18,6 +20,8 @@ var opcíones_node = {
 	"Burbuja": preload("res://scenes/burbuja_con_tierra.tscn"),
 	"Portal": preload("res://scenes/portal_con_tierra.tscn"),
 	"Bandera": preload("res://scenes/bander_con_tierra.tscn"),
+	"Piston": preload("res://scenes/piston_con_tierra.tscn"),
+	"Buton": preload("res://scenes/buton_con_tierra.tscn"),
 }
 
 var mapa_basica: PackedScene = preload("res://scenes/mapa_basica.tscn")
@@ -54,6 +58,8 @@ func prueba_nivel() -> void:
 	nuevo_nivel.editor = self
 	
 	var portales = []
+	var buton = null
+	var piston = null
 	for elem in range(columns * rows):
 		var x = elem % rows
 		var y = elem / rows
@@ -66,6 +72,10 @@ func prueba_nivel() -> void:
 			nuevo_nivel.add_child(node)
 			if node_nombre == "Portal":
 				portales.append(node.get_node(^"./Portal"))
+			if node_nombre == "Piston":
+				piston = node.get_node(^"./Piston")
+			if node_nombre == "Buton":
+				buton = node.get_node(^"./NuevoButon3d")
 				
 	if len(portales) == 1 or len(portales) > 2:
 		print("Solo puede hay 2 portales")
@@ -74,6 +84,11 @@ func prueba_nivel() -> void:
 	if len(portales) == 2:
 		portales[0].destino = portales[1]
 		portales[1].destino = portales[0]
+		
+	if (buton == null and piston != null) or (piston == null and buton != null):
+		print("Necesita un buton y un piston")
+	elif buton != null:
+		buton.target = piston	
 	
 	get_parent().add_child(nuevo_nivel)
 	get_parent().remove_child(self)

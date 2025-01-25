@@ -1,7 +1,18 @@
 extends StaticBody3D
 
-@export var poder: float = 10
+@export var poder: float = 2
 
-func _on_body_entered(body: Node3D) -> void:
-	print("Jugador collision")
-	body.velocity += poder * -(basis * Vector3.FORWARD)
+signal activar 
+
+var target = null
+
+func _on_activar() -> void:
+	if target != null:
+		target.velocity += poder * -(basis * Vector3.FORWARD)
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	target = body
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body == target:
+		target = null

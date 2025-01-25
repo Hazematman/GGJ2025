@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw4ahbrofcmrr"]
+
+[ext_resource type="PackedScene" uid="uid://b4qb4d5sxi1tg" path="res://scenes/tierra.tscn" id="1_1r7tl"]
+[ext_resource type="PackedScene" uid="uid://stkqtq403the" path="res://scenes/piston.tscn" id="2_4bqqh"]
+
+[node name="PistonConTierra" type="Node3D"]
+
+[node name="Tierra" parent="." instance=ExtResource("1_1r7tl")]
+
+[node name="Piston" parent="." instance=ExtResource("2_4bqqh")]

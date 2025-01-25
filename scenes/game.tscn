@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnkxde3v6a63m"]
+[gd_scene load_steps=13 format=3 uid="uid://bnkxde3v6a63m"]
 
 [ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_on0ku"]
 [ext_resource type="Script" path="res://scripts/mapa_basica.gd" id="1_y5lt0"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://stkqtq403the" path="res://scenes/piston.tscn" id="4_20j5n"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="5_1mhya"]
 [ext_resource type="PackedScene" path="res://scenes/bandera.tscn" id="7_vjvvj"]
+[ext_resource type="PackedScene" uid="uid://7hx8dsgjiyrl" path="res://scenes/nuevo_buton3d.tscn" id="8_ocipj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbm83"]
 
@@ -63,6 +64,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.626783, 0.25, -0.306759)
 
 [node name="Fondo" parent="." instance=ExtResource("2_upwy4")]
 transform = Transform3D(0.318198, -0.225, 0.225, 0, 0.318198, 0.318198, -0.318198, -0.225, 0.225, -2.202, -1.7, -2.215)
+
+[node name="NuevoButon3d" parent="." node_paths=PackedStringArray("target") instance=ExtResource("8_ocipj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.644334, 0, 0.0968999)
+target = NodePath("../Piston")
 
 [connection signal="gana" from="." to="." method="_on_gana"]
 [connection signal="mata" from="." to="." method="_on_mata"]

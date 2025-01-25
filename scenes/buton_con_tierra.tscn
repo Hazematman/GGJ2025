@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch13a0xhttlrj"]
+
+[ext_resource type="PackedScene" uid="uid://b4qb4d5sxi1tg" path="res://scenes/tierra.tscn" id="1_mi4n6"]
+[ext_resource type="PackedScene" uid="uid://7hx8dsgjiyrl" path="res://scenes/nuevo_buton3d.tscn" id="2_fjr0g"]
+
+[node name="ButonConTierra" type="Node3D"]
+
+[node name="Tierra" parent="." instance=ExtResource("1_mi4n6")]
+
+[node name="NuevoButon3d" parent="." instance=ExtResource("2_fjr0g")]
