@@ -6,12 +6,16 @@ var opcíones = [
 	"Aire",
 	"Tierra",
 	"Pincho",
+	"Burbuja",
+	"Portal",
 ]
 
 var opcíones_node = {
 	"Aire": null,
 	"Tierra": preload("res://scenes/tierra.tscn"),
 	"Pincho": preload("res://scenes/pincho_con_tierra.tscn"),
+	"Burbuja": preload("res://scenes/burbuja_con_tierra.tscn"),
+	"Portal": preload("res://scenes/portal_con_tierra.tscn"),
 }
 
 var mapa_basica: PackedScene = preload("res://scenes/mapa_basica.tscn")
@@ -47,6 +51,7 @@ func prueba_nivel() -> void:
 	var nuevo_nivel = mapa_basica.instantiate()
 	nuevo_nivel.editor = self
 	
+	var portales = []
 	for elem in range(columns * rows):
 		var x = elem % rows
 		var y = elem / rows
@@ -57,6 +62,18 @@ func prueba_nivel() -> void:
 			var node: Node3D = node_nuevo.instantiate()
 			node.position = Vector3(x*tile_size, 0, y*tile_size)
 			nuevo_nivel.add_child(node)
+			if node_nombre == "Portal":
+				portales.append(node.get_node(^"./Portal"))
+				
+	if len(portales) == 1 or len(portales) > 2:
+		print("Solo puede hay 2 portales")
+		assert(false)
+		
+	if len(portales) == 2:
+		print("Set dest")
+		print(portales[0])
+		portales[0].destino = portales[1]
+		portales[1].destino = portales[0]
 	
 	get_parent().add_child(nuevo_nivel)
 	get_parent().remove_child(self)

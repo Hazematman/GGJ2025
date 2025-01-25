@@ -11,7 +11,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if puede_portal:
 		destino.empieza_cooldown()
-		body.position = destino.position
+		body.global_position = destino.global_position
 	
 func empieza_cooldown() -> void:
 	puede_portal = false

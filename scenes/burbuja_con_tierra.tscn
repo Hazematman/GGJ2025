@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfp5lf407v2oj"]
+
+[ext_resource type="PackedScene" uid="uid://b4qb4d5sxi1tg" path="res://scenes/tierra.tscn" id="1_eijdi"]
+[ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="2_sxwb6"]
+
+[node name="BurbujaConTierra" type="Node3D"]
+
+[node name="Tierra" parent="." instance=ExtResource("1_eijdi")]
+
+[node name="Burbuja" parent="." instance=ExtResource("2_sxwb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156501, 0)

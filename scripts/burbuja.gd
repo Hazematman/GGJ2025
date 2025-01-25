@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		if not attractor.attracting:
 			attractor = null
 		else:
-			var nueva_direction = (attractor.position - position).normalized()
+			var nueva_direction = (attractor.global_position - global_position).normalized()
 			velocity = SPEED * nueva_direction
 			
 	if attractor == null:
