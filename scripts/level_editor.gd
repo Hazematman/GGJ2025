@@ -70,8 +70,6 @@ func prueba_nivel() -> void:
 		assert(false)
 		
 	if len(portales) == 2:
-		print("Set dest")
-		print(portales[0])
 		portales[0].destino = portales[1]
 		portales[1].destino = portales[0]
 	
