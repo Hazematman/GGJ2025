@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 const SPEED = 1.0
-const JUMP_VELOCITY = 1.0
+const JUMP_VELOCITY = 2.0
 
 var RIGHT_DIR = (Vector3.RIGHT + Vector3.FORWARD).normalized()
 var UP_DIR = (Vector3.RIGHT + Vector3.BACK).normalized()
@@ -25,8 +25,8 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (iso_basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = move_toward(velocity.x, direction.x, SPEED)
+		velocity.z = move_toward(velocity.z, direction.z, SPEED)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

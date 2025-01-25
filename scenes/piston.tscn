@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://stkqtq403the"]
+
+[ext_resource type="Script" path="res://scripts/piston.gd" id="1_2vr7p"]
+[ext_resource type="Texture2D" uid="uid://dp0i1yiswbofk" path="res://assets/piston.png" id="1_8hina"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ovf6a"]
+size = Vector3(0.15, 0.5, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3w00"]
+albedo_texture = ExtResource("1_8hina")
+uv1_scale = Vector3(3, 3, 3)
+uv1_offset = Vector3(0, 0.23, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ixbj2"]
+lightmap_size_hint = Vector2i(5, 8)
+material = SubResource("StandardMaterial3D_a3w00")
+size = Vector3(0.15, 0.15, 0.15)
+
+[node name="Piston" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_2vr7p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ovf6a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175, 0)
+mesh = SubResource("BoxMesh_ixbj2")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.153075)
+shape = SubResource("BoxShape3D_ovf6a")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
