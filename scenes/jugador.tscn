@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhl4dlwx751ji"]
+[gd_scene load_steps=8 format=3 uid="uid://dhl4dlwx751ji"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j1xni"]
 
@@ -15,6 +15,17 @@ fill_to = Vector2(1, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_kxb4x"]
 radius = 0.15
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_w56b5"]
+size = Vector3(0.3, 0.3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glh8l"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.392157)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pxcln"]
+material = SubResource("StandardMaterial3D_glh8l")
+size = Vector3(0.3, 0.3, 1)
+
 [node name="Jugador" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.286479, 0)
 collision_layer = 3
@@ -28,3 +39,15 @@ texture = SubResource("GradientTexture2D_cq5k4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_kxb4x")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.650758)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_w56b5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+visible = false
+mesh = SubResource("BoxMesh_pxcln")
