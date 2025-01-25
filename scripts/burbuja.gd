@@ -26,7 +26,6 @@ func _physics_process(delta: float) -> void:
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	# Perform attracion to player
 	var jugador = area.get_parent()
-	print("ATTRACT!")
 	attractor = jugador
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
