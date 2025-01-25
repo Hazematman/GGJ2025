@@ -68,7 +68,6 @@ func prueba_nivel() -> void:
 		var node_nuevo: PackedScene = opcíones_node[node_nombre]
 		if node_nuevo != null:
 			var node: Node3D = node_nuevo.instantiate()
-			print("pone ", node_nombre, " ", x, " ", y)
 			node.position = Vector3(x*tile_size, 0, y*tile_size)
 			nuevo_nivel.add_child(node)
 			if node_nombre == "Portal":
