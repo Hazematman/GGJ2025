@@ -1,10 +1,10 @@
 extends RigidBody3D
 
 const SPEED = .1
-const MAX_SPEED = 0.005
+const MAX_SPEED = 0.35
 const RESISTANCE = 0.001
 const JUMP_VELOCITY = 2.0
-const FORCE = 10
+const FORCE = 0.5
 
 var RIGHT_DIR = (Vector3.RIGHT + Vector3.FORWARD).normalized()
 var UP_DIR = (Vector3.RIGHT + Vector3.BACK).normalized()
@@ -80,7 +80,7 @@ func _physics_process(delta: float) -> void:
 
 	# El jugador no puede mover en la direcion arriba o bajo
 	#velocity.y = 0
-	apply_central_force(direction)
+	apply_central_force(direction*FORCE)
 	print(global_position)
 	print(direction)
 	#var col = move_and_collide(delta * velocity)
@@ -90,6 +90,9 @@ func _physics_process(delta: float) -> void:
 	#	var collider = col.get_collider()
 	#	if collider is RigidBody3D:
 	#		collider.apply_force(col.get_normal() * -FORCE)
+	#print("Speed", linear_velocity.length())
+	if linear_velocity.length() > MAX_SPEED:
+		linear_velocity = linear_velocity.limit_length(MAX_SPEED)
 	
 func _on_mata() -> void:
 	print("Estoy muerto")

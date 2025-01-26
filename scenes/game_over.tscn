@@ -20,7 +20,7 @@ offset_left = 526.0
 offset_top = 85.0
 offset_right = 664.0
 offset_bottom = 134.0
-text = "Reintentar"
+text = "Restart"
 script = ExtResource("1_itjs1")
 
 [node name="Salir" type="Button" parent="."]
