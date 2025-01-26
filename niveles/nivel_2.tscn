@@ -827,26 +827,32 @@ autoplay = true
 
 [node name="Asteroid2" parent="." instance=ExtResource("11_0okpu")]
 transform = Transform3D(0.444, 0, 0, 0, 0.444, 0, 0, 0, 0.444, 2.78537, 0.123434, 0.264184)
+axis_lock_linear_y = false
 physics_material_override = SubResource("PhysicsMaterial_t3g2x")
 
 [node name="Asteroid3" parent="." instance=ExtResource("11_0okpu")]
 transform = Transform3D(0.329, 0, 0, 0, 0.329, 0, 0, 0, 0.329, 3.21264, 0.123433, -0.140083)
+axis_lock_linear_y = false
 physics_material_override = SubResource("PhysicsMaterial_t3g2x")
 
 [node name="Asteroid4" parent="." instance=ExtResource("11_0okpu")]
 transform = Transform3D(0.404, 0, 0, 0, 0.404, 0, 0, 0, 0.404, 2.91665, 0.123434, -0.0593294)
+axis_lock_linear_y = false
 physics_material_override = SubResource("PhysicsMaterial_t3g2x")
 
 [node name="Asteroid5" parent="." instance=ExtResource("11_0okpu")]
 transform = Transform3D(0.329, 0, 0, 0, 0.329, 0, 0, 0, 0.329, 2.87918, 0.123434, -0.415647)
+axis_lock_linear_y = false
 physics_material_override = SubResource("PhysicsMaterial_t3g2x")
 
 [node name="Asteroid6" parent="." instance=ExtResource("11_0okpu")]
 transform = Transform3D(0.289, 0, 0, 0, 0.289, 0, 0, 0, 0.289, 2.70128, 0.123434, -0.225138)
+axis_lock_linear_y = false
 physics_material_override = SubResource("PhysicsMaterial_t3g2x")
 
 [node name="Asteroid7" parent="." instance=ExtResource("11_0okpu")]
 transform = Transform3D(0.299, 0, 0, 0, 0.299, 0, 0, 0, 0.299, 3.19681, 0.123434, -0.84369)
+axis_lock_linear_y = false
 physics_material_override = SubResource("PhysicsMaterial_t3g2x")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
