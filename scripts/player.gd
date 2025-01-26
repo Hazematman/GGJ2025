@@ -30,8 +30,8 @@ func _physics_process(delta: float) -> void:
 		$Area3D.monitorable = false
 	
 	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	#if not is_on_floor():
+	#	velocity += get_gravity() * delta
 		
 	# Un basis (3x3 matrix) para mover correcto en la perspectiva isometrico
 	var iso_basis := Basis(RIGHT_DIR, Vector3.UP, UP_DIR)
@@ -49,6 +49,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+	# El jugador no puede mover en la direcion arriba o bajo
+	velocity.y = 0
 	move_and_slide()
 	
 func _on_mata() -> void:
