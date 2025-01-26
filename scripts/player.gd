@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, direction.x, SPEED)
 		velocity.z = move_toward(velocity.z, direction.z, SPEED)
 		
-		look_at(position - Vector3(velocity.x, 0, velocity.z), Vector3.UP)
+		look_at(global_position - Vector3(velocity.x, 0, velocity.z), Vector3.UP)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
