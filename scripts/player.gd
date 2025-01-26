@@ -1,7 +1,10 @@
 extends CharacterBody3D
 
 const SPEED = 1.0
+const RESISTANCE = 0.001
 const JUMP_VELOCITY = 2.0
+
+const FORCE = 5
 
 var RIGHT_DIR = (Vector3.RIGHT + Vector3.FORWARD).normalized()
 var UP_DIR = (Vector3.RIGHT + Vector3.BACK).normalized()
@@ -49,8 +52,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, direction.x, SPEED)
 		velocity.z = move_toward(velocity.z, direction.z, SPEED)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, RESISTANCE)
+		velocity.z = move_toward(velocity.z, 0, RESISTANCE)
 		
 	var dir2d = Vector2()
 	# usa el raton para la direcion
@@ -68,7 +71,13 @@ func _physics_process(delta: float) -> void:
 
 	# El jugador no puede mover en la direcion arriba o bajo
 	velocity.y = 0
-	move_and_slide()
+	var col = move_and_collide(delta * velocity)
+	if col:
+		velocity = velocity.bounce(col.get_normal())
+		
+		var collider = col.get_collider()
+		if collider is RigidBody3D:
+			collider.apply_force(col.get_normal() * -FORCE)
 	
 func _on_mata() -> void:
 	print("Estoy muerto")

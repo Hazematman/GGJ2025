@@ -27,6 +27,6 @@ transform = Transform3D(0.838671, -0.385118, 0.385118, 0, 0.707107, 0.707107, -0
 [node name="Fondo" parent="." instance=ExtResource("4_o5k61")]
 transform = Transform3D(0.318198, -0.225, 0.225, 0, 0.318198, 0.318198, -0.318198, -0.225, 0.225, -2.202, -1.7, -2.215)
 
-[connection signal="gana" from="." to="." method="_on_mata"]
+[connection signal="gana" from="." to="." method="_on_gana"]
 [connection signal="mata" from="." to="." method="_on_mata"]
 [connection signal="mata" from="Jugador" to="Jugador" method="_on_mata"]

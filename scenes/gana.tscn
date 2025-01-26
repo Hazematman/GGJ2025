@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc3w1vg1iiea2"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_puynl"]
+[ext_resource type="Script" path="res://scripts/boton_reintentar.gd" id="2_ds67o"]
+
+[node name="Gana" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+focus_neighbor_top = NodePath("Siguente")
+focus_next = NodePath("Siguente")
+script = ExtResource("1_puynl")
+
+[node name="Siguente" type="Button" parent="."]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 85.0
+offset_right = 664.0
+offset_bottom = 134.0
+text = "Siguente"
+script = ExtResource("2_ds67o")
+
+[connection signal="pressed" from="Siguente" to="Siguente" method="_button_pressed"]

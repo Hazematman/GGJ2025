@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://q4a2tiq1xe5r"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r8lxy"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_m2lti"]
+radial_segments = 6
+rings = 4
+
+[node name="Asteroid" type="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.246488, 0)
+shape = SubResource("SphereShape3D_r8lxy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 0.0193435, 0)
+mesh = SubResource("SphereMesh_m2lti")
+skeleton = NodePath("../..")

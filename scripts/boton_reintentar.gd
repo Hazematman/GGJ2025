@@ -1,6 +1,5 @@
 extends Button
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,5 +10,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _button_pressed():
-	print("Reiniciar pulsado")
-	get_tree().reload_current_scene()
+	var next_scene = get_parent().next
+	var root: Node = get_tree().root
+	get_tree().change_scene_to_packed(next_scene)
