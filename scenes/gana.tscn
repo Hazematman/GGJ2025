@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scripts/buton_gana.gd" id="2_kvi1w"]
 
 [node name="Gana" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 focus_neighbor_top = NodePath("Buton")

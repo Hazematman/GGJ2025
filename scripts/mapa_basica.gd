@@ -13,6 +13,9 @@ var GO = game_over_screen.instantiate()
 signal mata
 signal gana
 
+func _ready() -> void:
+	get_tree().paused = false
+
 func _on_gana() -> void:
 	print("GANADOR!")
 	var gana_node = gana_screen.instantiate()
@@ -20,6 +23,7 @@ func _on_gana() -> void:
 	add_child(gana_node)
 	menu = true
 	done = true
+	get_tree().paused = true
 
 func _on_mata() -> void:
 	print("MATA")
@@ -38,6 +42,8 @@ func _input(ev):
 		if menu == false:
 			menu = true
 			add_child(GO)
+			get_tree().paused = true
 		else:
 			menu = false
 			remove_child(GO)
+			get_tree().paused = false

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://83k88uip7p5j" path="res://scenes/fondo.tscn" id="4_o5k61"]
 
 [node name="MapaBasica" type="Node3D"]
+process_mode = 3
 script = ExtResource("1_hc840")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("node", "fondo")]
