@@ -1,7 +1,8 @@
-[gd_scene load_steps=130 format=4 uid="uid://qtenla5l8euk"]
+[gd_scene load_steps=131 format=4 uid="uid://qtenla5l8euk"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_0fywl"]
 [ext_resource type="PackedScene" uid="uid://q4a2tiq1xe5r" path="res://scenes/asteroid.tscn" id="2_g62i1"]
+[ext_resource type="PackedScene" uid="uid://dm3djo8c2ut0a" path="res://niveles/nivel_2.tscn" id="2_visj4"]
 [ext_resource type="PackedScene" uid="uid://bhm3q7oo8pjet" path="res://scenes/portal.tscn" id="3_ei0wc"]
 [ext_resource type="PackedScene" uid="uid://bjq448laokne" path="res://assets/cohete.blend" id="4_2o1yy"]
 [ext_resource type="PackedScene" uid="uid://dv5rewd88c2te" path="res://scenes/bandera.tscn" id="5_ec545"]
@@ -1335,6 +1336,7 @@ shadow_mesh = SubResource("ArrayMesh_ot33w")
 
 [node name="MapaBasica" parent="." instance=ExtResource("1_0fywl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68918, 0, -1.64964)
+next = ExtResource("2_visj4")
 
 [node name="Camera3D" parent="MapaBasica" index="0"]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 2, 3, 2)
