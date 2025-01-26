@@ -48,11 +48,23 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = move_toward(velocity.x, direction.x, SPEED)
 		velocity.z = move_toward(velocity.z, direction.z, SPEED)
-		
-		look_at(global_position - Vector3(velocity.x, 0, velocity.z), Vector3.UP)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+	var dir2d = Vector2()
+	# usa el raton para la direcion
+	if len(Input.get_connected_joypads()) == 0:
+		var mouse = get_viewport().get_mouse_position()
+		var center = get_viewport().get_camera_3d().unproject_position(global_position)
+		
+		dir2d = center - mouse
+	else:
+		dir2d = Input.get_vector("look_right", "look_left", "look_down", "look_up")
+		
+	var dir_rotate = dir2d.rotated(deg_to_rad(-45))
+	var dir_3d = Vector3(dir_rotate.x, 	basis.z.y, dir_rotate.y)
+	look_at(global_position + dir_3d, Vector3.UP)
 
 	# El jugador no puede mover en la direcion arriba o bajo
 	velocity.y = 0
