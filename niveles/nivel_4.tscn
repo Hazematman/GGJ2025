@@ -1,9 +1,10 @@
-[gd_scene load_steps=50 format=4 uid="uid://djhbjeko736dq"]
+[gd_scene load_steps=51 format=4 uid="uid://djhbjeko736dq"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_xud7p"]
 [ext_resource type="PackedScene" uid="uid://bixe1cbd1unyr" path="res://niveles/nivel_5.tscn" id="2_543mc"]
 [ext_resource type="PackedScene" path="res://scenes/bandera.tscn" id="2_v1tel"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="3_odrbw"]
+[ext_resource type="Environment" uid="uid://c8o0wcinl2v7l" path="res://assets/space.tres" id="3_pu8gp"]
 [ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://scenes/pincho.tscn" id="5_qi8jn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_718jd"]
@@ -505,6 +506,7 @@ next = ExtResource("2_543mc")
 
 [node name="Camera3D" parent="MapaBasica" index="0"]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 2, 3, 2)
+environment = ExtResource("3_pu8gp")
 
 [node name="Bandera" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_v1tel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6412, 0.25198, -1.92836)

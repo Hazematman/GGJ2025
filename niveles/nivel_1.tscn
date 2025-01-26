@@ -1,11 +1,12 @@
-[gd_scene load_steps=59 format=4 uid="uid://qtenla5l8euk"]
+[gd_scene load_steps=60 format=4 uid="uid://qtenla5l8euk"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_0fywl"]
 [ext_resource type="PackedScene" uid="uid://q4a2tiq1xe5r" path="res://scenes/asteroid.tscn" id="2_g62i1"]
 [ext_resource type="PackedScene" uid="uid://dm3djo8c2ut0a" path="res://niveles/nivel_2.tscn" id="2_visj4"]
 [ext_resource type="PackedScene" uid="uid://bhm3q7oo8pjet" path="res://scenes/portal.tscn" id="3_ei0wc"]
+[ext_resource type="Environment" uid="uid://c8o0wcinl2v7l" path="res://assets/space.tres" id="3_gu2oh"]
 [ext_resource type="Texture2D" uid="uid://ecwui8h2a0pf" path="res://assets/Cohete-Color.png" id="5_6wlpv"]
-[ext_resource type="PackedScene" uid="uid://dv5rewd88c2te" path="res://scenes/bandera.tscn" id="5_ec545"]
+[ext_resource type="PackedScene" path="res://scenes/bandera.tscn" id="5_ec545"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="6_qrxr8"]
 [ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://scenes/pincho.tscn" id="8_fvani"]
 [ext_resource type="AudioStream" uid="uid://73aiqwefdjvu" path="res://assets/Atomic Collapse.mp3" id="9_gps1o"]
@@ -572,6 +573,7 @@ next = ExtResource("2_visj4")
 
 [node name="Camera3D" parent="MapaBasica" index="0"]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 2, 3, 2)
+environment = ExtResource("3_gu2oh")
 
 [node name="level-design-definitive" type="Node3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
