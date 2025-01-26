@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4lvv1vix1qn2"]
+[gd_scene load_steps=7 format=3 uid="uid://d4lvv1vix1qn2"]
 
 [ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_nfbys"]
+[ext_resource type="Environment" uid="uid://c8o0wcinl2v7l" path="res://assets/space.tres" id="1_p8y82"]
 [ext_resource type="PackedScene" uid="uid://83k88uip7p5j" path="res://scenes/fondo.tscn" id="3_ka122"]
 [ext_resource type="PackedScene" uid="uid://d2v20lptmp74h" path="res://scenes/buton3d.tscn" id="4_l47c4"]
 [ext_resource type="AudioStream" uid="uid://73aiqwefdjvu" path="res://assets/Atomic Collapse.mp3" id="4_stsdv"]
@@ -12,6 +13,7 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 1, 1.5, 1)
+environment = ExtResource("1_p8y82")
 projection = 1
 current = true
 size = 2.5
