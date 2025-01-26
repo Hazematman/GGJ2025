@@ -14,6 +14,11 @@ signal mata
 var attracting = false
 var expulsing = false
 
+func _ready() -> void:
+	var anim : Animation= $vecky2/AnimationPlayer.get_animation("baked_walk")
+	anim.loop_mode = Animation.LOOP_LINEAR
+	$vecky2/AnimationPlayer.play("baked_walk")
+
 func _physics_process(delta: float) -> void:
 	# no processa Input si estamos en el menu
 	var padre = get_parent()
