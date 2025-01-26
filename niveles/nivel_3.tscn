@@ -1,7 +1,6 @@
-[gd_scene load_steps=97 format=4 uid="uid://c1kgx8posl2ei"]
+[gd_scene load_steps=96 format=4 uid="uid://c1kgx8posl2ei"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_t4jmo"]
-[ext_resource type="PackedScene" uid="uid://djhbjeko736dq" path="res://niveles/nivel_4.tscn" id="2_gehti"]
 [ext_resource type="PackedScene" uid="uid://dv5rewd88c2te" path="res://scenes/bandera.tscn" id="3_7exqa"]
 [ext_resource type="PackedScene" uid="uid://7hx8dsgjiyrl" path="res://scenes/nuevo_buton3d.tscn" id="4_bhpg7"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="4_nkl6a"]
@@ -975,7 +974,6 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="MapaBasica" parent="." instance=ExtResource("1_t4jmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58855, 0, -2.06645)
-next = ExtResource("2_gehti")
 
 [node name="Camera3D" parent="MapaBasica" index="0"]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 2, 3, 2)
