@@ -17,7 +17,7 @@ offset_left = 526.0
 offset_top = 85.0
 offset_right = 664.0
 offset_bottom = 134.0
-text = "Siguente"
+text = "Next Level"
 script = ExtResource("2_kvi1w")
 
 [connection signal="pressed" from="Buton" to="Buton" method="_button_pressed"]
