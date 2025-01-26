@@ -3,6 +3,7 @@ extends CharacterBody3D
 const SPEED = 0.01
 const MAX_SPEED = 3.0
 const POP_SPEED = 2.5
+const FORCE = 5
 
 var attractor: Node3D = null
 var expulsor: Node3D = null
@@ -43,15 +44,15 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED/100)
 	
 	var velocity_before = velocity
+	velocity.y = 0
 	# hay collision
-	if move_and_slide():
-		var col: PhysicsBody3D = get_last_slide_collision().get_collider()
-		# Usa collision_layer para ver si es jugador
-		if (col.collision_layer & (1 << 15) == (1 << 15)):
-			if velocity_before.length() > POP_SPEED:
-				emit_signal("mata")
+	var col = move_and_collide(delta * velocity)
+	if col:
+		velocity = velocity.bounce(col.get_normal())
 		
-	
+		var collider = col.get_collider()
+		if collider is RigidBody3D:
+			collider.apply_force(col.get_normal() * -FORCE)
 
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
