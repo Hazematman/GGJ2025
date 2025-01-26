@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpb3yqnixl1sm"]
+[gd_scene load_steps=4 format=3 uid="uid://6ycn1aakapms"]
 
 [ext_resource type="Script" path="res://scripts/boton_reintentar.gd" id="1_itjs1"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_yfj04"]
@@ -7,13 +7,13 @@
 [node name="game_over" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-focus_neighbor_top = NodePath("Reintentar")
+focus_neighbor_top = NodePath("Buton")
 focus_neighbor_bottom = NodePath("Salir")
-focus_next = NodePath("Reintentar")
+focus_next = NodePath("Buton")
 focus_previous = NodePath("Salir")
 script = ExtResource("1_yfj04")
 
-[node name="Reintentar" type="Button" parent="."]
+[node name="Buton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 526.0
 offset_top = 85.0
@@ -31,5 +31,5 @@ offset_bottom = 266.0
 text = "Salir del juego"
 script = ExtResource("2_u5h41")
 
-[connection signal="pressed" from="Reintentar" to="Reintentar" method="_button_pressed"]
+[connection signal="pressed" from="Buton" to="Buton" method="_button_pressed"]
 [connection signal="pressed" from="Salir" to="Salir" method="_button_pressed"]
