@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhl4dlwx751ji"]
+[gd_scene load_steps=11 format=3 uid="uid://dhl4dlwx751ji"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j1xni"]
 [ext_resource type="AudioStream" uid="uid://bj4wowhnoe5oy" path="res://assets/gravity_push.mp3" id="2_2lf57"]
+[ext_resource type="PackedScene" uid="uid://k6b0jcd1ympj" path="res://assets/vecky.blend" id="2_jnv7d"]
 [ext_resource type="AudioStream" uid="uid://d4c7ge0gd367h" path="res://assets/gravity_pull.mp3" id="3_hxfga"]
 
 [sub_resource type="Gradient" id="Gradient_60t3l"]
@@ -35,7 +36,11 @@ collision_layer = 32771
 collision_mask = 3
 script = ExtResource("1_j1xni")
 
+[node name="vecky2" parent="." instance=ExtResource("2_jnv7d")]
+transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, -0.285882, 0)
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
+visible = false
 pixel_size = 0.005
 billboard = 1
 render_priority = 1
