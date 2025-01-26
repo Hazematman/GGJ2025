@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://qtenla5l8euk"]
+[gd_scene load_steps=61 format=4 uid="uid://qtenla5l8euk"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_0fywl"]
 [ext_resource type="PackedScene" uid="uid://q4a2tiq1xe5r" path="res://scenes/asteroid.tscn" id="2_g62i1"]
@@ -525,7 +525,7 @@ shadow_mesh = SubResource("ArrayMesh_8boib")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_evd1s"]
 data = PackedVector3Array(1, 1, -0.237896, -1, 1, 0.237896, -1, 1, -0.237896, 1, 1, -0.237896, 1, 1, 0.237896, -1, 1, 0.237896, 1, -1, 0.237896, -1, 1, 0.237896, 1, 1, 0.237896, 1, -1, 0.237896, -1, -1, 0.237896, -1, 1, 0.237896, -1, -1, 0.237896, -1, 1, -0.237896, -1, 1, 0.237896, -1, -1, 0.237896, -1, -1, -0.237896, -1, 1, -0.237896, -1, -1, -0.237896, 1, -1, 0.237896, 1, -1, -0.237896, -1, -1, -0.237896, -1, -1, 0.237896, 1, -1, 0.237896, 1, -1, -0.237896, 1, 1, 0.237896, 1, 1, -0.237896, 1, -1, -0.237896, 1, -1, 0.237896, 1, 1, 0.237896, -1, -1, -0.237896, 1, 1, -0.237896, -1, 1, -0.237896, -1, -1, -0.237896, 1, -1, -0.237896, 1, 1, -0.237896)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8713g"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8in7u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upwmh"]
 albedo_texture = ExtResource("5_6wlpv")
@@ -564,6 +564,8 @@ shadow_mesh = SubResource("ArrayMesh_y1s4v")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_076w2"]
 size = Vector3(5.39075, 0.905, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8713g"]
 
 [node name="Nivel1" type="Node3D"]
 
@@ -733,9 +735,11 @@ shape = SubResource("ConcavePolygonShape3D_evd1s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8446, 0.841975, 6.52613)
 
 [node name="Asteroid" parent="level-design-definitive" instance=ExtResource("2_g62i1")]
-transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -1.53109, 0.793026, -12.9593)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.53109, 0.793026, -12.9593)
+collision_layer = 3
 axis_lock_linear_y = false
-physics_material_override = SubResource("PhysicsMaterial_8713g")
+mass = 0.65
+physics_material_override = SubResource("PhysicsMaterial_8in7u")
 
 [node name="Portal" parent="." node_paths=PackedStringArray("destino") instance=ExtResource("3_ei0wc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13003, 0.25, -1.88836)
@@ -831,13 +835,17 @@ autoplay = true
 
 [node name="Asteroid" parent="." instance=ExtResource("2_g62i1")]
 transform = Transform3D(0.427124, 0.16193, 0.233263, -0.273693, 0.252707, -0.149471, -0.403574, 0, 0.348241, 0.114255, 0.0928966, -1.43692)
+collision_layer = 3
 axis_lock_linear_y = false
-physics_material_override = SubResource("PhysicsMaterial_8713g")
+mass = 0.65
+physics_material_override = SubResource("PhysicsMaterial_8in7u")
 
 [node name="Asteroid2" parent="." instance=ExtResource("2_g62i1")]
 transform = Transform3D(0.589, 0, 0, 0, 0.589, 0, 0, 0, 0.589, -0.535131, 0.123434, -0.547262)
+collision_layer = 3
 axis_lock_linear_y = false
-physics_material_override = SubResource("PhysicsMaterial_8713g")
+mass = 0.65
+physics_material_override = SubResource("PhysicsMaterial_8in7u")
 
 [node name="Asteroid2" parent="Asteroid2" instance=ExtResource("2_g62i1")]
 transform = Transform3D(0.589, 0, 0, 0, 0.589, 0, 0, 0, 0.589, 1.36228, -0.119451, 0.703047)
@@ -851,37 +859,51 @@ physics_material_override = SubResource("PhysicsMaterial_8713g")
 
 [node name="Asteroid3" parent="." instance=ExtResource("2_g62i1")]
 transform = Transform3D(0.509, 0, 0, 0, 0.509, 0, 0, 0, 0.509, -0.223638, 0.123434, 0.445067)
+collision_layer = 3
 axis_lock_linear_y = false
-physics_material_override = SubResource("PhysicsMaterial_8713g")
+mass = 0.65
+physics_material_override = SubResource("PhysicsMaterial_8in7u")
 
 [node name="Asteroid4" parent="." instance=ExtResource("2_g62i1")]
 transform = Transform3D(0.589, 0, 0, 0, 0.589, 0, 0, 0, 0.589, -0.638317, 0.123433, 0.98233)
+collision_layer = 3
 axis_lock_linear_y = false
-physics_material_override = SubResource("PhysicsMaterial_8713g")
+mass = 0.65
+physics_material_override = SubResource("PhysicsMaterial_8in7u")
 
 [node name="Asteroid5" parent="." instance=ExtResource("2_g62i1")]
 transform = Transform3D(0.414, 0, 0, 0, 0.414, 0, 0, 0, 0.414, -1.12406, 0.011654, 0.671184)
+collision_layer = 3
 axis_lock_linear_y = false
-physics_material_override = SubResource("PhysicsMaterial_8713g")
+mass = 0.65
+physics_material_override = SubResource("PhysicsMaterial_8in7u")
 
 [node name="Asteroid6" parent="." instance=ExtResource("2_g62i1")]
 transform = Transform3D(0.799, 0, 0, 0, 0.799, 0, 0, 0, 0.799, -1.57554, 0.123434, 0.864233)
+collision_layer = 3
 axis_lock_linear_y = false
-physics_material_override = SubResource("PhysicsMaterial_8713g")
+mass = 0.65
+physics_material_override = SubResource("PhysicsMaterial_8in7u")
 
 [node name="Asteroid7" parent="." instance=ExtResource("2_g62i1")]
 transform = Transform3D(0.589, 0, 0, 0, 0.589, 0, 0, 0, 0.589, -2.10854, 0.123434, 0.585995)
+collision_layer = 3
 axis_lock_linear_y = false
-physics_material_override = SubResource("PhysicsMaterial_8713g")
+mass = 0.65
+physics_material_override = SubResource("PhysicsMaterial_8in7u")
 
 [node name="Asteroid8" parent="." instance=ExtResource("2_g62i1")]
 transform = Transform3D(0.422, 0, 0, 0, 0.422, 0, 0, 0, 0.422, -1.88768, 0.123434, 1.31452)
+collision_layer = 3
 axis_lock_linear_y = false
-physics_material_override = SubResource("PhysicsMaterial_8713g")
+mass = 0.65
+physics_material_override = SubResource("PhysicsMaterial_8in7u")
 
 [node name="Asteroid9" parent="." instance=ExtResource("2_g62i1")]
 transform = Transform3D(0.589, 0, 0, 0, 0.589, 0, 0, 0, 0.589, -0.283045, 0.123434, 1.55945)
+collision_layer = 3
 axis_lock_linear_y = false
-physics_material_override = SubResource("PhysicsMaterial_8713g")
+mass = 0.65
+physics_material_override = SubResource("PhysicsMaterial_8in7u")
 
 [editable path="MapaBasica"]
