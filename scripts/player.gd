@@ -12,6 +12,11 @@ var attracting = false
 var expulsing = false
 
 func _physics_process(delta: float) -> void:
+	# no processa Input si estamos en el menu
+	var padre = get_parent()
+	if "menu" in padre and padre.menu:
+		return
+		
 	if Input.is_action_pressed("attract"):
 		attracting = true
 	else:
