@@ -1313,18 +1313,28 @@ shape = SubResource("ConcavePolygonShape3D_4a5iw")
 
 [node name="Pincho2" parent="." instance=ExtResource("7_m2g5j")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8.94454, 0.118875, -1.8162)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho4" parent="." instance=ExtResource("7_m2g5j")]
 transform = Transform3D(-3.09086e-08, 0.707107, -0.707107, -1, -4.37114e-08, 0, -3.09086e-08, 0.707107, 0.707107, 8.38615, 0.118875, -0.192459)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho5" parent="." instance=ExtResource("7_m2g5j")]
 transform = Transform3D(-3.09086e-08, 0.707107, -0.707107, -1, -4.37114e-08, 0, -3.09086e-08, 0.707107, 0.707107, 7.98316, 0.118875, 0.179945)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho6" parent="." instance=ExtResource("7_m2g5j")]
 transform = Transform3D(-3.09086e-08, 0.707107, -0.707107, -1, -4.37114e-08, 0, -3.09086e-08, 0.707107, 0.707107, 7.63614, 0.118875, 0.542211)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho3" parent="." instance=ExtResource("7_m2g5j")]
 transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 9.29965, 0.118875, -0.804262)
+collision_layer = 2
+collision_mask = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_f4o57")

@@ -833,81 +833,123 @@ shape = SubResource("CylinderShape3D_rus57")
 
 [node name="Pincho" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(-0.204568, 2.99302, 0, -2.99302, -0.204568, 0, 0, 0, 3, 89.713, 0.733507, 1.42545)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho2" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(-0.204568, 2.99302, 0, -2.99302, -0.204568, 0, 0, 0, 3, 89.713, 0.733507, 2.74625)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho3" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(-0.204568, 2.99302, 0, -2.99302, -0.204568, 0, 0, 0, 3, 89.5837, 0.733507, 4.53143)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho4" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(-0.204568, 2.99302, 0, -2.99302, -0.204568, 0, 0, 0, 3, 89.5836, 0.733507, 6.41814)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho5" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(-0.204568, 2.99302, 0, -2.99302, -0.204568, 0, 0, 0, 3, 89.3963, 0.733507, 8.7046)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho6" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(-0.204568, 2.99302, 0, -2.99302, -0.204568, 0, 0, 0, 3, 89.1883, 0.733507, 11.5318)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho7" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(-0.204568, 2.99302, 0, -2.99302, -0.204568, 0, 0, 0, 3, 89.1883, 0.733507, 13.8974)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho8" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 102.937, 0.733507, -7.37418)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho9" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 102.955, 0.733507, -8.69485)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho10" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 103.109, 0.733507, -10.4781)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho11" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 103.135, 0.733507, -12.3646)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho12" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 103.354, 0.733507, -14.6483)
-
-[node name="Pincho13" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
-transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 103.601, 0.733507, -17.4723)
-
-[node name="Pincho14" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
-transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 103.634, 0.733507, -19.8377)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho22" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99971, 110.765, 0.733507, 0.230099)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho23" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99971, 110.791, 0.733507, -1.65643)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho24" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99971, 111.01, 0.733507, -3.94009)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho25" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99971, 111.257, 0.733507, -6.76414)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho26" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99971, 111.289, 0.733507, -9.12951)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho15" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 93.938, 0.733507, -3.29092)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho16" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 93.9561, 0.733507, -4.10667)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho17" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 94.11, 0.733507, -5.20813)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho18" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 94.136, 0.733507, -6.37339)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho19" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 94.3548, 0.733507, -7.78395)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho20" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 94.6018, 0.733507, -9.5283)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho21" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 94.6344, 0.733507, -10.9893)
+collision_layer = 2
+collision_mask = 2
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.578, 0, -2.16858)

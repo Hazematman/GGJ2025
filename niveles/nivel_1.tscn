@@ -1248,30 +1248,48 @@ shape = SubResource("BoxShape3D_076w2")
 
 [node name="Pincho" parent="." instance=ExtResource("8_fvani")]
 transform = Transform3D(0.479213, -0.731232, 0.485443, 0.342027, -0.353783, -0.870548, 0.808315, 0.583213, 0.0805638, 1.97649, 0.189894, 0.53489)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho2" parent="." instance=ExtResource("8_fvani")]
 transform = Transform3D(0.479213, -0.731232, 0.485443, 0.666741, -0.0564084, -0.743152, 0.5708, 0.679793, 0.46051, 1.6239, 0.198675, 0.221996)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho3" parent="." instance=ExtResource("8_fvani")]
 transform = Transform3D(0.479213, -0.731232, 0.485443, 0.666741, -0.0564084, -0.743152, 0.5708, 0.679793, 0.46051, 1.33451, 0.208108, -0.0756611)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho4" parent="." instance=ExtResource("8_fvani")]
 transform = Transform3D(0.479213, -0.731232, 0.485443, 0.666741, -0.0564084, -0.743152, 0.5708, 0.679793, 0.46051, 1.07074, 0.176853, -0.412228)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho5" parent="." instance=ExtResource("8_fvani")]
 transform = Transform3D(0.479213, -0.731232, 0.485443, 0.666741, -0.0564084, -0.743152, 0.5708, 0.679793, 0.46051, 0.786561, 0.170021, -0.728436)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho6" parent="." instance=ExtResource("8_fvani")]
 transform = Transform3D(-0.729824, -0.251503, -0.635692, 0.666741, -0.0564084, -0.743152, 0.151046, -0.966211, 0.208855, 0.200823, 0.127817, -1.21334)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho7" parent="." instance=ExtResource("8_fvani")]
 transform = Transform3D(-0.729824, -0.251503, -0.635692, 0.666741, -0.0564084, -0.743152, 0.151046, -0.966211, 0.208855, 0.531449, 0.127817, -1.40309)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho8" parent="." instance=ExtResource("8_fvani")]
 transform = Transform3D(-0.729824, -0.251503, -0.635692, 0.666741, -0.0564084, -0.743152, 0.151046, -0.966211, 0.208855, 0.944993, 0.127817, -1.49051)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Pincho9" parent="." instance=ExtResource("8_fvani")]
 transform = Transform3D(-0.745243, -0.06172, -0.663931, 0.666741, -0.0564084, -0.743152, 0.00841585, -0.996498, 0.0831891, 1.31464, 0.127817, -1.55599)
+collision_layer = 2
+collision_mask = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_gps1o")
