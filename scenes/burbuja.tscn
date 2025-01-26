@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmxkqtmrvjhl"]
+[gd_scene load_steps=9 format=3 uid="uid://dmxkqtmrvjhl"]
 
 [ext_resource type="Script" path="res://scripts/burbuja.gd" id="1_gcaxg"]
 [ext_resource type="Shader" path="res://assets/burbuja.gdshader" id="3_7j5j3"]
 [ext_resource type="Texture2D" uid="uid://wystkyu6xau0" path="res://assets/barril.png" id="4_78kwf"]
+[ext_resource type="AudioStream" uid="uid://bjqoghqsot5jj" path="res://assets/chemical_explosion.mp3" id="4_e4ubq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n3vpj"]
 radius = 0.15
@@ -61,5 +62,10 @@ transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
 billboard = 1
 texture = ExtResource("4_78kwf")
 
+[node name="DieSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_e4ubq")
+volume_db = -20.0
+
+[connection signal="mata" from="." to="." method="_on_mata"]
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

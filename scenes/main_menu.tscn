@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4lvv1vix1qn2"]
+[gd_scene load_steps=7 format=3 uid="uid://d4lvv1vix1qn2"]
 
 [ext_resource type="PackedScene" uid="uid://dhl4dlwx751ji" path="res://scenes/jugador.tscn" id="1_nfbys"]
 [ext_resource type="PackedScene" uid="uid://83k88uip7p5j" path="res://scenes/fondo.tscn" id="3_ka122"]
 [ext_resource type="PackedScene" uid="uid://d2v20lptmp74h" path="res://scenes/buton3d.tscn" id="4_l47c4"]
+[ext_resource type="AudioStream" uid="uid://73aiqwefdjvu" path="res://assets/Atomic Collapse.mp3" id="4_stsdv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bjj35"]
 
@@ -40,6 +41,11 @@ text = "Pone `E` para interactuar"
 
 [node name="Fondo" parent="." instance=ExtResource("3_ka122")]
 transform = Transform3D(0.318198, -0.225, 0.225, 0, 0.318198, 0.318198, -0.318198, -0.225, 0.225, -2.202, -1.7, -2.215)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_stsdv")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="mata" from="Jugador" to="Jugador" method="_on_mata"]
 

@@ -22,13 +22,17 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_pressed("attract"):
 		attracting = true
+		$PullSound.play()
 	else:
 		attracting = false
+		$PullSound.stop()
 	
 	if Input.is_action_pressed("expulse"):
 		expulsing = true
+		$PushSound.play()
 	else:
 		expulsing = false
+		$PushSound.stop()
 		
 	if Input.is_action_pressed("expulse") or Input.is_action_pressed("attract"):
 		$Area3D/MeshInstance3D.show()

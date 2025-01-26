@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhl4dlwx751ji"]
+[gd_scene load_steps=10 format=3 uid="uid://dhl4dlwx751ji"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j1xni"]
+[ext_resource type="AudioStream" uid="uid://bj4wowhnoe5oy" path="res://assets/gravity_push.mp3" id="2_2lf57"]
+[ext_resource type="AudioStream" uid="uid://d4c7ge0gd367h" path="res://assets/gravity_pull.mp3" id="3_hxfga"]
 
 [sub_resource type="Gradient" id="Gradient_60t3l"]
 offsets = PackedFloat32Array(0.448052, 1)
@@ -53,3 +55,13 @@ shape = SubResource("BoxShape3D_w56b5")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
 visible = false
 mesh = SubResource("BoxMesh_pxcln")
+
+[node name="PushSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2lf57")
+volume_db = 10.0
+parameters/looping = false
+
+[node name="PullSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hxfga")
+volume_db = 20.0
+parameters/looping = false

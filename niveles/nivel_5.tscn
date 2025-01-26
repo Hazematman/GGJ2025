@@ -1,8 +1,9 @@
-[gd_scene load_steps=105 format=4 uid="uid://bixe1cbd1unyr"]
+[gd_scene load_steps=106 format=4 uid="uid://bixe1cbd1unyr"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_d0jag"]
 [ext_resource type="PackedScene" uid="uid://dv5rewd88c2te" path="res://scenes/bandera.tscn" id="2_ir8tv"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="3_qa2ie"]
+[ext_resource type="AudioStream" uid="uid://73aiqwefdjvu" path="res://assets/Atomic Collapse.mp3" id="4_uegwi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_718jd"]
 resource_name = "Material.002"
@@ -1322,8 +1323,9 @@ transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5841, 0.25198, -2.13828)
 level = NodePath("../MapaBasica")
 
-[node name="Burbuja" parent="." instance=ExtResource("3_qa2ie")]
+[node name="Burbuja" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_qa2ie")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7731, 0.25198, -1.77711)
+level = NodePath("../MapaBasica")
 
 [node name="level-design-definitive" type="Node3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
@@ -1625,5 +1627,10 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-design-definitive/Cone_087/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_d5h06")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uegwi")
+volume_db = -20.0
+autoplay = true
 
 [editable path="MapaBasica"]

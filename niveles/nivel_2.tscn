@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=4 uid="uid://dm3djo8c2ut0a"]
+[gd_scene load_steps=87 format=4 uid="uid://dm3djo8c2ut0a"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_1ox8f"]
 [ext_resource type="PackedScene" uid="uid://bhm3q7oo8pjet" path="res://scenes/portal.tscn" id="2_tjse4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://daotfgjeqvegq" path="res://assets/pared_material.tres" id="6_14d1k"]
 [ext_resource type="Script" path="res://scripts/door_script.gd" id="7_rmc81"]
 [ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://scenes/pincho.tscn" id="8_s5pgx"]
+[ext_resource type="AudioStream" uid="uid://73aiqwefdjvu" path="res://assets/Atomic Collapse.mp3" id="9_qt2fc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfcv4"]
 
@@ -1028,10 +1029,11 @@ destino = NodePath("../Portal3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85503, 0.247663, -1.12993)
 level = NodePath("../MapaBasica")
 
-[node name="Burbuja" parent="." instance=ExtResource("4_apfk4")]
+[node name="Burbuja" parent="." node_paths=PackedStringArray("level") instance=ExtResource("4_apfk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57601, 0.25198, 1.34675)
 collision_layer = 2059
 collision_mask = 2059
+level = NodePath("../MapaBasica")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0953239, 0, 0, 0, 1, 0, 0, 0, 1.76822, 4.19583, -0.149357, 0.389803)
@@ -1083,6 +1085,11 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.4488
 
 [node name="Pincho4" parent="." instance=ExtResource("8_s5pgx")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.82445, 0.228035, -1.29124)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qt2fc")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 

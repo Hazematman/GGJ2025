@@ -12,6 +12,7 @@ var puede_empujar_jugador = false
 
 signal mata
 
+@export var level: Node3D = null
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -19,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		
 	if attractor != null:
-		if (not attractor.attracting) or (velocity.length() > MAX_SPEED):
+		if (not "attracting" in attractor) or (not attractor.attracting) or (velocity.length() > MAX_SPEED):
 			attractor = null
 		else:
 			var nueva_direction = (attractor.global_position - global_position)
@@ -29,7 +30,7 @@ func _physics_process(delta: float) -> void:
 				velocity += SPEED * nueva_direction
 			
 	if expulsor != null:
-		if (not expulsor.expulsing) or (velocity.length() < -MAX_SPEED):
+		if (not "expulsing" in expulsor) or (not expulsor.expulsing) or (velocity.length() < -MAX_SPEED):
 			expulsor = null
 		else:
 			var nueva_direction = (expulsor.global_position - global_position)
@@ -82,6 +83,8 @@ func _input(ev):
 			velocity -= SPEED * nueva_direction * 100
 
 func _on_mata() -> void:
-	print("Estoy muerto")
-	get_parent().remove_child(self)
-	queue_free()
+	$DieSound.play()
+	self.hide()
+	
+	if level != null:
+		level.emit_signal("mata")
