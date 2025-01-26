@@ -1,7 +1,7 @@
 [gd_scene load_steps=106 format=4 uid="uid://bixe1cbd1unyr"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_d0jag"]
-[ext_resource type="PackedScene" path="res://scenes/bandera.tscn" id="2_ir8tv"]
+[ext_resource type="PackedScene" uid="uid://dv5rewd88c2te" path="res://scenes/bandera.tscn" id="2_ir8tv"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="3_qa2ie"]
 [ext_resource type="AudioStream" uid="uid://73aiqwefdjvu" path="res://assets/Atomic Collapse.mp3" id="4_uegwi"]
 

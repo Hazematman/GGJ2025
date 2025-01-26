@@ -1,10 +1,10 @@
 [gd_scene load_steps=96 format=4 uid="uid://c1kgx8posl2ei"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_t4jmo"]
-[ext_resource type="PackedScene" path="res://scenes/bandera.tscn" id="3_7exqa"]
+[ext_resource type="PackedScene" uid="uid://dv5rewd88c2te" path="res://scenes/bandera.tscn" id="3_7exqa"]
 [ext_resource type="PackedScene" uid="uid://7hx8dsgjiyrl" path="res://scenes/nuevo_buton3d.tscn" id="4_bhpg7"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="4_nkl6a"]
-[ext_resource type="Material" path="res://assets/pared_material.tres" id="6_qjx6e"]
+[ext_resource type="Material" uid="uid://daotfgjeqvegq" path="res://assets/pared_material.tres" id="6_qjx6e"]
 [ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://scenes/pincho.tscn" id="7_m2g5j"]
 [ext_resource type="AudioStream" uid="uid://73aiqwefdjvu" path="res://assets/Atomic Collapse.mp3" id="8_f4o57"]
 
@@ -970,7 +970,7 @@ material = ExtResource("6_qjx6e")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4a5iw"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[node name="Nivel3" type="Node3D"]
+[node name="Nivel5" type="Node3D"]
 
 [node name="MapaBasica" parent="." instance=ExtResource("1_t4jmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58855, 0, -2.06645)
