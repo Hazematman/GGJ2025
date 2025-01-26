@@ -22,4 +22,4 @@ func _on_body_entered(body: Node3D) -> void:
 func _input(ev):
 	if Input.is_action_pressed("Interactuar"):
 		if puede_interactuar == true:
-			get_tree().change_scene_to_file("res://scenes/game.tscn")
+			get_tree().change_scene_to_file("res://niveles/nivel_1.tscn")
