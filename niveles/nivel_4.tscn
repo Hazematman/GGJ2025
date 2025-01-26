@@ -1,10 +1,9 @@
-[gd_scene load_steps=55 format=4 uid="uid://djhbjeko736dq"]
+[gd_scene load_steps=54 format=4 uid="uid://djhbjeko736dq"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_xud7p"]
 [ext_resource type="PackedScene" uid="uid://bixe1cbd1unyr" path="res://niveles/nivel_5.tscn" id="2_543mc"]
-[ext_resource type="PackedScene" uid="uid://dv5rewd88c2te" path="res://scenes/bandera.tscn" id="2_v1tel"]
+[ext_resource type="PackedScene" path="res://scenes/bandera.tscn" id="2_v1tel"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="3_odrbw"]
-[ext_resource type="AudioStream" uid="uid://73aiqwefdjvu" path="res://assets/Atomic Collapse.mp3" id="5_jrwwh"]
 [ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://scenes/pincho.tscn" id="5_qi8jn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_516gl"]
@@ -533,7 +532,7 @@ material = SubResource("StandardMaterial3D_hbh4h")
 [sub_resource type="BoxShape3D" id="BoxShape3D_1qf2m"]
 size = Vector3(5.39075, 0.905, 1)
 
-[node name="Nivel3" type="Node3D"]
+[node name="Nivel4" type="Node3D"]
 
 [node name="MapaBasica" parent="." instance=ExtResource("1_xud7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5585, 0, -2.06645)
@@ -546,9 +545,8 @@ transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6412, 0.25198, -1.92836)
 level = NodePath("../MapaBasica")
 
-[node name="Burbuja" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_odrbw")]
+[node name="Burbuja" parent="." instance=ExtResource("3_odrbw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5433, 0.25198, -1.39377)
-level = NodePath("../MapaBasica")
 
 [node name="level-design-definitive" type="Node3D" parent="."]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
@@ -707,7 +705,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_uu10d")
 
 [node name="Cone_062" type="MeshInstance3D" parent="level-design-definitive"]
-transform = Transform3D(-0.00537823, 0.379627, -0.0179639, -0.00820588, -0.0180775, -0.379571, -0.379963, -0.00498306, 0.00845169, 104.137, 1.33595, -12.2559)
+transform = Transform3D(-0.00963726, 0.38357, -0.0176475, -0.0147041, -0.0182652, -0.372885, -0.680856, -0.00503481, 0.00830282, 104.137, 1.33595, -13.2717)
 mesh = SubResource("ArrayMesh_xqohy")
 skeleton = NodePath("")
 
@@ -741,6 +739,15 @@ mesh = SubResource("CylinderMesh_86a3s")
 [node name="StaticBody3D" type="StaticBody3D" parent="level-design-definitive/Bouncer3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-design-definitive/Bouncer3/StaticBody3D"]
+shape = SubResource("CylinderShape3D_rus57")
+
+[node name="Bouncer13" type="MeshInstance3D" parent="level-design-definitive"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.952, 0.775552, -7.95094)
+mesh = SubResource("CylinderMesh_86a3s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level-design-definitive/Bouncer13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level-design-definitive/Bouncer13/StaticBody3D"]
 shape = SubResource("CylinderShape3D_rus57")
 
 [node name="Bouncer4" type="MeshInstance3D" parent="level-design-definitive"]
@@ -798,12 +805,21 @@ mesh = SubResource("CylinderMesh_86a3s")
 shape = SubResource("CylinderShape3D_rus57")
 
 [node name="Bouncer6" type="MeshInstance3D" parent="level-design-definitive"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.8956, 0.775552, 8.30215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.5599, 0.222671, 8.03248)
 mesh = SubResource("CylinderMesh_86a3s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="level-design-definitive/Bouncer6"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-design-definitive/Bouncer6/StaticBody3D"]
+shape = SubResource("CylinderShape3D_rus57")
+
+[node name="Bouncer12" type="MeshInstance3D" parent="level-design-definitive"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5872, 0.775552, -9.14458)
+mesh = SubResource("CylinderMesh_86a3s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level-design-definitive/Bouncer12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level-design-definitive/Bouncer12/StaticBody3D"]
 shape = SubResource("CylinderShape3D_rus57")
 
 [node name="Bouncer5" type="MeshInstance3D" parent="level-design-definitive"]
@@ -836,6 +852,63 @@ transform = Transform3D(-0.204568, 2.99302, 0, -2.99302, -0.204568, 0, 0, 0, 3, 
 [node name="Pincho7" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
 transform = Transform3D(-0.204568, 2.99302, 0, -2.99302, -0.204568, 0, 0, 0, 3, 89.1883, 0.733507, 13.8974)
 
+[node name="Pincho8" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 102.937, 0.733507, -7.37418)
+
+[node name="Pincho9" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 102.955, 0.733507, -8.69485)
+
+[node name="Pincho10" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 103.109, 0.733507, -10.4781)
+
+[node name="Pincho11" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 103.135, 0.733507, -12.3646)
+
+[node name="Pincho12" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 103.354, 0.733507, -14.6483)
+
+[node name="Pincho13" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 103.601, 0.733507, -17.4723)
+
+[node name="Pincho14" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99972, 103.634, 0.733507, -19.8377)
+
+[node name="Pincho22" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99971, 110.765, 0.733507, 0.230099)
+
+[node name="Pincho23" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99971, 110.791, 0.733507, -1.65643)
+
+[node name="Pincho24" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99971, 111.01, 0.733507, -3.94009)
+
+[node name="Pincho25" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99971, 111.257, 0.733507, -6.76414)
+
+[node name="Pincho26" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204549, -2.99273, 0.0413102, -2.99302, -0.204568, -1.03172e-08, 0.00281694, -0.041214, -2.99971, 111.289, 0.733507, -9.12951)
+
+[node name="Pincho15" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 93.938, 0.733507, -3.29092)
+
+[node name="Pincho16" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 93.9561, 0.733507, -4.10667)
+
+[node name="Pincho17" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 94.11, 0.733507, -5.20813)
+
+[node name="Pincho18" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 94.136, 0.733507, -6.37339)
+
+[node name="Pincho19" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 94.3548, 0.733507, -7.78395)
+
+[node name="Pincho20" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 94.6018, 0.733507, -9.5283)
+
+[node name="Pincho21" parent="level-design-definitive" instance=ExtResource("5_qi8jn")]
+transform = Transform3D(0.204622, -2.97701, 0.0255178, -2.99409, -0.203494, -6.37305e-09, 0.00281795, -0.0409975, -1.85296, 94.6344, 0.733507, -10.9893)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.578, 0, -2.16858)
 
@@ -854,10 +927,5 @@ shape = SubResource("BoxShape3D_1qf2m")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(-0.999901, 0, 0.0140319, 0, 1, 0, -0.0140319, 0, -0.999901, 1.94797, 0, -0.679096)
 shape = SubResource("BoxShape3D_1qf2m")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_jrwwh")
-volume_db = -20.0
-autoplay = true
 
 [editable path="MapaBasica"]
