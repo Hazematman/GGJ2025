@@ -1,8 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://q4a2tiq1xe5r"]
+[gd_scene load_steps=7 format=3 uid="uid://q4a2tiq1xe5r"]
+
+[ext_resource type="Texture2D" uid="uid://7ai8rsedwdhq" path="res://assets/floor.png" id="1_ovdob"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_r8lxy"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwfa2"]
+albedo_texture = ExtResource("1_ovdob")
+
+[sub_resource type="ImageTexture" id="ImageTexture_otio6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vv5e"]
+albedo_texture = SubResource("ImageTexture_otio6")
+
 [sub_resource type="SphereMesh" id="SphereMesh_m2lti"]
+material = SubResource("StandardMaterial3D_6vv5e")
 radial_segments = 6
 rings = 4
 
@@ -14,5 +25,6 @@ shape = SubResource("SphereShape3D_r8lxy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 0.0193435, 0)
+material_override = SubResource("StandardMaterial3D_vwfa2")
 mesh = SubResource("SphereMesh_m2lti")
 skeleton = NodePath("../..")
