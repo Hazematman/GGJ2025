@@ -1,45 +1,10 @@
-[gd_scene load_steps=54 format=4 uid="uid://djhbjeko736dq"]
+[gd_scene load_steps=50 format=4 uid="uid://djhbjeko736dq"]
 
 [ext_resource type="PackedScene" uid="uid://cauawvsjcua7o" path="res://scenes/mapa_basica.tscn" id="1_xud7p"]
 [ext_resource type="PackedScene" uid="uid://bixe1cbd1unyr" path="res://niveles/nivel_5.tscn" id="2_543mc"]
-[ext_resource type="PackedScene" uid="uid://dv5rewd88c2te" path="res://scenes/bandera.tscn" id="2_v1tel"]
+[ext_resource type="PackedScene" path="res://scenes/bandera.tscn" id="2_v1tel"]
 [ext_resource type="PackedScene" uid="uid://dmxkqtmrvjhl" path="res://scenes/burbuja.tscn" id="3_odrbw"]
 [ext_resource type="PackedScene" uid="uid://bukbegwo1hv80" path="res://scenes/pincho.tscn" id="5_qi8jn"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_516gl"]
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_r5tsk"]
-_surfaces = [{
-"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
-"format": 34896613377,
-"index_count": 6,
-"index_data": PackedByteArray("AAADAAEAAAACAAMA"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AAAAAP//AAD//wAA//8AAAAAAAAAAAAA//8AAAAAAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_bsmfe"]
-resource_name = "level-design-definitive_Plane_003"
-_surfaces = [{
-"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
-"attribute_data": PackedByteArray("AAD///////8AAAAA//8AAA=="),
-"format": 34896613399,
-"index_count": 6,
-"index_data": PackedByteArray("AAADAAEAAAACAAMA"),
-"material": SubResource("StandardMaterial3D_516gl"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 4,
-"vertex_data": PackedByteArray("AAAAAP///7///wAA////vwAAAAAAAP+///8AAAAA/7////9/////f////3////9/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_r5tsk")
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fdwtu"]
-data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_718jd"]
 resource_name = "Material.002"
@@ -553,16 +518,6 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 
 [node name="Door_1" type="StaticBody3D" parent="level-design-definitive"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8446, 0.841975, 6.52613)
-
-[node name="Plane_003" type="MeshInstance3D" parent="level-design-definitive"]
-transform = Transform3D(15.8787, 0, 0, 0, 15.8787, 0, 0, 0, 15.8787, 97.0798, 0.0132008, -0.0034022)
-mesh = SubResource("ArrayMesh_bsmfe")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="level-design-definitive/Plane_003"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="level-design-definitive/Plane_003/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_fdwtu")
 
 [node name="Cube_025" type="MeshInstance3D" parent="level-design-definitive"]
 transform = Transform3D(5.84662, -0.00309371, 0.0155906, 0.0296812, 0.756439, -0.0364302, -0.119331, 0.0365731, 0.754801, 86.8931, 0.587907, -0.57961)

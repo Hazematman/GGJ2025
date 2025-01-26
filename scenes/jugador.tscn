@@ -30,10 +30,11 @@ albedo_color = Color(1, 1, 1, 0.392157)
 material = SubResource("StandardMaterial3D_glh8l")
 size = Vector3(0.3, 0.3, 1)
 
-[node name="Jugador" type="CharacterBody3D"]
+[node name="Jugador" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.286479, 0)
 collision_layer = 32771
 collision_mask = 3
+axis_lock_linear_y = true
 script = ExtResource("1_j1xni")
 
 [node name="vecky2" parent="." instance=ExtResource("2_jnv7d")]
@@ -47,6 +48,7 @@ render_priority = 1
 texture = SubResource("GradientTexture2D_cq5k4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+physics_interpolation_mode = 1
 shape = SubResource("SphereShape3D_kxb4x")
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -58,7 +60,6 @@ collision_mask = 4
 shape = SubResource("BoxShape3D_w56b5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
-visible = false
 mesh = SubResource("BoxMesh_pxcln")
 
 [node name="PushSound" type="AudioStreamPlayer" parent="."]

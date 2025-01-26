@@ -1,8 +1,8 @@
-extends CharacterBody3D
+extends RigidBody3D
 
 const SPEED = 0.01
-const MAX_SPEED = 3.0
-const POP_SPEED = 2.5
+const MAX_SPEED = 5.0
+const POP_SPEED = 3.5
 const FORCE = 5
 
 var attractor: Node3D = null
@@ -16,8 +16,8 @@ signal mata
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	#if not is_on_floor():
+	#	velocity += get_gravity() * delta
 		
 	if attractor != null:
 		if (not "attracting" in attractor) or (not attractor.attracting) or (velocity.length() > MAX_SPEED):

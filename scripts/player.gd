@@ -1,10 +1,10 @@
-extends CharacterBody3D
+extends RigidBody3D
 
-const SPEED = 1.0
+const SPEED = .1
+const MAX_SPEED = 0.005
 const RESISTANCE = 0.001
 const JUMP_VELOCITY = 2.0
-
-const FORCE = 5
+const FORCE = 10
 
 var RIGHT_DIR = (Vector3.RIGHT + Vector3.FORWARD).normalized()
 var UP_DIR = (Vector3.RIGHT + Vector3.BACK).normalized()
@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		$Area3D.monitorable = false
 	
 	# Add the gravity.
-	#if not is_on_floor():
+	#if not is_on_floor():6
 	#	velocity += get_gravity() * delta
 		
 	# Un basis (3x3 matrix) para mover correcto en la perspectiva isometrico
@@ -57,12 +57,12 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (iso_basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = move_toward(velocity.x, direction.x, SPEED)
-		velocity.z = move_toward(velocity.z, direction.z, SPEED)
-	else:
-		velocity.x = move_toward(velocity.x, 0, RESISTANCE)
-		velocity.z = move_toward(velocity.z, 0, RESISTANCE)
+	#if direction:
+	#	velocity.x = move_toward(velocity.x, direction.x, clamp(SPEED, 0, MAX_SPEED))
+	#	velocity.z = move_toward(velocity.z, direction.z, clamp(SPEED, 0, MAX_SPEED))
+	#else:
+	#	velocity.x = move_toward(velocity.x, 0, RESISTANCE)
+	#	velocity.z = move_toward(velocity.z, 0, RESISTANCE)
 		
 	var dir2d = Vector2()
 	# usa el raton para la direcion
@@ -79,14 +79,17 @@ func _physics_process(delta: float) -> void:
 	look_at(global_position + dir_3d, Vector3.UP)
 
 	# El jugador no puede mover en la direcion arriba o bajo
-	velocity.y = 0
-	var col = move_and_collide(delta * velocity)
-	if col:
-		velocity = velocity.bounce(col.get_normal())
-		
-		var collider = col.get_collider()
-		if collider is RigidBody3D:
-			collider.apply_force(col.get_normal() * -FORCE)
+	#velocity.y = 0
+	apply_central_force(direction)
+	print(global_position)
+	print(direction)
+	#var col = move_and_collide(delta * velocity)
+	#if col:
+	#	velocity = velocity.bounce(col.get_normal())
+	#	
+	#	var collider = col.get_collider()
+	#	if collider is RigidBody3D:
+	#		collider.apply_force(col.get_normal() * -FORCE)
 	
 func _on_mata() -> void:
 	print("Estoy muerto")
